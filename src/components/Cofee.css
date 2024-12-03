@@ -1,0 +1,146 @@
+
+
+.cofee-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #222222 100%);
+
+}
+
+.cofee-section {
+    flex: 1;
+    max-width: 50%;
+}
+
+.cofee-section h1 {
+    font-family: Degular Display;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 70px;
+    text-align: left;
+
+}
+.image-section img {
+    max-width: 100%;
+    height: auto;
+}
+/* Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+    .cofee-section h1 {
+      font-size: 90px;
+      line-height: 80px;
+    }
+  
+    .cofee-content {
+      padding: 60px;
+    }
+  }
+  
+  /* Medium Screens (992px to 1199px) */
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .cofee-section h1 {
+      font-size: 70px;
+      line-height: 65px;
+    }
+  
+    .cofee-content {
+      flex-direction: row;
+      padding: 40px;
+    }
+  }
+  
+  /* Small Screens (768px to 991px) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .cofee-section h1 {
+      font-size: 50px;
+      line-height: 55px;
+    }
+  
+    .cofee-content {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px;
+    }
+  
+    .cofee-section {
+      max-width: 100%;
+    }
+  
+    .image-section img {
+      max-width: 80%;
+    }
+  }
+  
+  /* Extra Small Screens (576px to 767px) */
+  @media (max-width: 767px) {
+    .cofee-section h1 {
+      font-size: 40px;
+      line-height: 45px;
+    }
+  
+    .cofee-content {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+  
+    .image-section img {
+      width: 100%;
+    }
+  }
+  
+  /* Very Small Screens (Below 576px) */
+  @media (max-width: 575px) {
+    .cofee-section h1 {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  
+    .cofee-content {
+      padding: 15px;
+    }
+  
+    .image-section img {
+      width: 100%;
+    }
+  
+    .cofee-section h1 {
+      text-align: center;
+    }
+  }
+  
+  /* Mobile Portrait (max-width 480px) */
+  @media (max-width: 480px) {
+    .cofee-section h1 {
+      font-size: 28px;
+      line-height: 30px;
+    }
+  
+    .cofee-content {
+      padding: 10px;
+    }
+  
+    .image-section img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  /* Mobile Landscape (max-width 768px) */
+  @media (max-width: 768px) {
+    .cofee-section h1 {
+      font-size: 38px;
+      line-height: 40px;
+    }
+  
+    .cofee-content {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .image-section img {
+      width: 90%;
+    }
+  }

@@ -1,0 +1,120 @@
+/* Featured Section Background */
+.featured-section {
+  background: linear-gradient(180deg, #252525 79%, #000000 100%);
+  padding: 50px;
+  overflow: hidden;
+}
+
+/* Featured Text Styling */
+.featured-text {
+  font-family: 'Degular Display', sans-serif;
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 100px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Image Row for Continuous Scrolling */
+.featured-row-wrapper {
+  padding: 0 50px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.featured-row {
+  display: flex;
+  gap: 2px; /* Space between images */
+  white-space: nowrap;
+  width: max-content; /* Only takes as much width as needed */
+  padding-right: 50px; /* Adjust to ensure extra space at the end */
+}
+
+/* Featured Image Hover Effects */
+.featured-image {
+  flex: 0 0 auto;
+  transition: transform 0.3s ease, filter 0.3s;
+}
+
+.featured-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, z-index 0.3s; /* Smooth transition */
+  transform: scale(0.85); /* Scale down slightly to fit in the slider */
+}
+.featured-image:hover img {
+  transform: scale(0.9); /* Full size on hover */
+  z-index: 1; /* Bring the hovered image in front */
+}
+
+/* Hover Effects */
+.featured-row:hover .featured-image {
+  filter: grayscale(100%); /* Make all images grayscale */
+}
+
+.featured-row .featured-image:hover {
+  filter: grayscale(0); /* Remove grayscale on hover */
+  transform: scale(1.1); /* Scale to increase size */
+  z-index: 1; /* Bring the hovered image to the front */
+}
+
+/* Button Styling */
+.hover-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #343434;
+  overflow: hidden;
+  transition: color 0.4s ease-in-out;
+  font-family: 'Degular Display', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+  margin-top: 20px;
+}
+
+/* Button Hover Effect */
+.hover-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transition: left 0.4s ease-in-out;
+  z-index: 0;
+  border: none;
+}
+
+.hover-button:hover::before {
+  left: 0;
+  border: none;
+}
+
+.hover-button:hover {
+  color: #343434;
+  border: none;
+}
+
+.hover-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .featured-text {
+    font-size: 60px;
+    line-height: 1.2;
+  }
+  .hover-button {
+    font-size: 18px;
+    padding: 8px 20px;
+  }
+  .featured-image {
+    flex: 0 0 50%; /* Show fewer images on smaller screens */
+  }
+}

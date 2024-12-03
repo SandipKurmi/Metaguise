@@ -1,0 +1,138 @@
+/* src/components/Gallery.css */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding-top: 5px;
+  max-height: 75vh; /* Limit height to make scrolling visible */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: thin; /* For Firefox: thinner scroll bar */
+  overflow-x: hidden;
+}
+.gallery::-webkit-scrollbar {
+  width: 6px; /* Scrollbar width for Webkit browsers */
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 10px;
+}
+
+.gallery::-webkit-scrollbar-track {
+  background-color: #171515;
+}
+
+.gallery-item {
+  position: relative;
+  /* Ensure the text is positioned relative to the image */
+
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* src/App.css */
+.sidebar {
+  background-color: #171515;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.list-group-item {
+  background-color: #161616 !important;
+  color: #615d5d;
+  border: none;
+  text-transform: capitalize !important;
+  font-size: 14px;
+  padding: 5px;
+}
+.list-group-item-dark:hover {
+  color: #615d5d;
+  ; /* Keep the same color as default */
+}
+
+.list-group-item-dark:focus, 
+.list-group-item-dark:active  {
+  color: #fff;
+}
+
+.list-group {
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.dream-button {
+  background-color: #343434;
+  border: none;
+  display: inline-block;
+  font-family: Degular Display, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  transition: color .4s ease-in-out;
+  width: 100%;
+  color:#fff;
+  font-weight: 900;
+}
+/* Button Hover Effect */
+.dream-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transition: left 0.4s ease-in-out;
+  z-index: 0;
+}
+
+.dream-button:hover::before {
+  left: 0;
+}
+
+.dream-button:hover {
+  color: #343434;
+}
+
+.dream-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover Text Container */
+.image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  padding: 5px 10px;
+  font-size: 21px;
+  border-radius: 4px;
+  /* Rounded corners for the text box */
+  display: none;
+  /* Initially hide text */
+  width: 90%;
+  /* Make the text container responsive */
+  text-align: left;
+  /* Align text to the left */
+  text-transform: capitalize;
+  font-weight: 900;
+}
+
+/* Show text when hovering over the gallery item */
+.gallery-item:hover .image-text {
+  display: block;
+}

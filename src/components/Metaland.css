@@ -1,0 +1,112 @@
+.metaland-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensure there's enough scrollable content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  transition: transform 1.2s ease-in-out; /* Smooth zoom transition */
+}
+
+.content {
+  max-width: 80%;
+}
+
+.metaland-text {
+  font-family: 'Degular Display', sans-serif;
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 100px;
+  text-align: center;
+}
+
+iframe {
+  transition: transform 1.2s ease-in-out;
+}
+/* Media Queries */
+
+/* Extra Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+  .metaland-text {
+    font-size: 90px; /* Slightly smaller font for large screens */
+  }
+}
+
+/* Large Screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .metaland-text {
+    font-size: 80px; /* Adjust font size */
+  }
+
+  iframe {
+    height: 450px; /* Smaller iframe height */
+  }
+}
+
+/* Medium Screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .metaland-container {
+    padding: 15px; /* Reduce padding */
+  }
+
+  .metaland-text {
+    font-size: 60px; /* Smaller font size */
+  }
+
+  iframe {
+    height: 400px; /* Reduced iframe height */
+  }
+}
+
+/* Small Screens (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .metaland-container {
+    padding: 10px; /* Add padding for smaller devices */
+  }
+
+  .metaland-text {
+    font-size: 50px; /* Smaller font size */
+  }
+
+  iframe {
+    height: 350px; /* Reduced iframe height */
+  }
+}
+
+/* Extra Small Screens (Below 576px) */
+@media (max-width: 575px) {
+  .metaland-container {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 10px; /* Reduce padding */
+    height: 30vh;
+  }
+
+  .metaland-text {
+    font-size: 40px; /* Adjust font size */
+    line-height: 1.1; /* Tighten spacing */
+  }
+
+  iframe {
+    height: 250px; /* Smaller iframe height */
+  }
+}
+
+/* Ultra Small Devices (Below 400px) */
+@media (max-width: 400px) {
+  .metaland-text {
+    font-size: 30px; /* Further reduce text size */
+  }
+
+  iframe {
+    height: 200px; /* Adjust iframe height for very small screens */
+  }
+}
+
+
+
+
+
+

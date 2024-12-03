@@ -1,0 +1,118 @@
+.main-container{
+  margin-top: 100px;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-item {
+  position: relative;
+  aspect-ratio: 1 / 0.7;
+  overflow: visible;
+  transition: z-index 0.3s ease-out;
+  padding: 5px;
+}
+
+.grid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+/* Active state - Apply effects on click */
+.grid-item.active {
+  z-index: 10;
+}
+
+/* Default positioning - for items that are not in the last row */
+.grid-item.active:not(.last-row) .grid-image {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0; /* Scale from top */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* For items in the first two columns */
+.grid-item:nth-child(3n-2).active .grid-image,
+.grid-item:nth-child(3n-1).active .grid-image {
+  left: 0;
+  transform-origin: left center;
+}
+
+/* For the last column */
+.grid-item:nth-child(3n).active .grid-image {
+  right: 0;
+  transform-origin: right center;
+}
+
+/* Dim other images when one is active */
+.image-grid .grid-item:not(.active) .grid-image {
+  filter: brightness(0.9);
+}
+
+/* Handle last row scaling from bottom to top */
+.grid-item.last-row.active .grid-image {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  bottom: 0; /* Scale from bottom */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform-origin: center bottom; /* Scale upwards */
+}
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-bottom: 20px;
+    
+}
+
+.back-button .arrow {
+  font-size: 18px;
+}
+
+.back-button:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-item:nth-child(2n).active .grid-image {
+    right: 0;
+    left: auto;
+    transform-origin: right center;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item.active .grid-image {
+    position: relative;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    transform: none;
+    transform-origin: center;
+  }
+}

@@ -1,0 +1,125 @@
+/* Sliding from bottom for text */
+.slide-in-text {
+  margin-top: 100px;
+  opacity: 0;
+  transform: translateY(50px); /* Initially moved down 50px */
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Slow down transition */
+}
+
+.slide-in-text.active {
+  opacity: 1;
+  transform: translateY(0); /* Move to normal position */
+}
+
+/* Sliding from bottom for images */
+.slide-in-image {
+  opacity: 0;
+  transform: translateY(50px); /* Initially moved down 50px */
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Slow down transition */
+}
+
+.slide-in-image.active {
+  opacity: 1;
+  transform: translateY(0); /* Move to normal position */
+  gap: 20px;
+  background: linear-gradient(180deg, #252525 0%, #000000 100%);
+  display: flex;
+  gap: 20px;
+}
+.team-text{
+font-family: Degular Display;
+font-size: 128px;
+font-weight: 900;
+line-height: 100px;
+text-align: center;
+margin-top: 20px;
+}
+/* Media Queries for Responsive Adjustments */
+
+/* Extra Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+  .team-text {
+    font-size: 150px; /* Larger text for bigger screens */
+    line-height: 120px;
+  }
+
+  .slide-in-text {
+    margin-top: 150px;
+  }
+}
+
+/* Large Screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .team-text {
+    font-size: 100px; /* Adjust size for medium-large screens */
+    line-height: 80px;
+  }
+
+  .slide-in-text {
+    margin-top: 120px;
+  }
+
+  .slide-in-image {
+    width: 80%;
+  }
+}
+
+/* Medium Screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .team-text {
+    font-size: 80px; /* Smaller text for medium screens */
+    line-height: 90px;
+  }
+
+  .slide-in-text,
+  .slide-in-image {
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  }
+
+  .slide-in-image {
+    width: 90%;
+  }
+}
+
+/* Small Screens (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .team-text {
+    font-size: 60px; /* Smaller text for smaller screens */
+    line-height: 70px;
+  }
+
+  .slide-in-text,
+  .slide-in-image {
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  }
+
+  .slide-in-image {
+    width: 100%;
+  }
+}
+
+/* Extra Small Screens (Below 576px) */
+@media (max-width: 575px) {
+  .team-text {
+    font-size: 45px; /* Compact text for small mobile devices */
+    line-height: 50px;
+  }
+
+  .slide-in-text,
+  .slide-in-image {
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  }
+
+  .slide-in-image {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+

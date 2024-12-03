@@ -1,0 +1,156 @@
+/* General Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  color: #fff;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  position: relative; /* Ensure it's positioned relative to adjust its top value */
+ 
+}
+
+.logo img {
+  max-height: 50px;
+  width: auto;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.menu {
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Default Flex Alignment */
+.header-left, .header-center, .header-right {
+  flex: 1;
+  text-align: center;
+}
+
+.header-left {
+  text-align: left;
+}
+
+.header-right {
+  text-align: right;
+}
+
+/* Media Queries */
+
+/* Extra Large Screens (Desktops, ≥1200px) */
+@media (min-width: 1200px) {
+  .header {
+    padding: 20px 100px;
+  }
+
+  .logo {
+    font-size: 28px;
+    
+  }
+
+  .icon {
+    font-size: 22px;
+  }
+}
+
+/* Large Screens (Laptops, 992px to 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .header {
+    padding: 15px 60px;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+}
+
+/* Medium Screens (Tablets, 768px to 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .header {
+    padding: 15px 40px;
+  }
+
+  .logo img {
+    max-height: 45px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+}
+
+/* Small Screens (Phones, 576px to 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .header-left, .header-center, .header-right {
+    text-align: center;
+    flex: none;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+/* Extra Small Screens (Extra Small Phones, <576px) */
+@media (max-width: 575px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    max-height: 40px;
+  }
+  .logo{
+    top: -23px; /* Move it slightly upwards */
+  }
+
+  .header-left, .header-center, .header-right {
+    text-align: center;
+    flex: none;
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}
