@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Allprojects() {
   const images = [
-    { imgPath: 'assets/Allprojects/ Commercial/Ardete/cover/ardete5.jpg' },
+    { imgPath: 'assets/Allprojects/commercial/Ardete/cover/ardete5.jpg' },
     { imgPath: 'assets/Allprojects/commercial/Tanishq/cover/tanishq11.jpg' },
     { imgPath: 'assets/Allprojects/residential/A13-43/cover/a13-431.jpg' },
     { imgPath: 'assets/Allprojects/residential/Ankit/cover/ankit1.jpg' },
