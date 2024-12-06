@@ -10,12 +10,14 @@ import Brochure from '../../components/Brochure';
 import Team from '../../components/Team';
 import Metaland from '../../components/Metaland';
 import { Swipper } from '../../components/Swiper';
+import Featured from '../../components/Featured';
 
 function Home() {
   return (
     <div className='Home'>
       <Swipper />
       {/* <MainContent /> */}
+      <Featured />
       <Features />
       <Metavision />
       <Product />

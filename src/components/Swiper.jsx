@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './Swipper.css'; // Custom styles
+import './Swipper.css';
 
 export const Swipper = () => {
   return (
@@ -10,14 +10,14 @@ export const Swipper = () => {
       spaceBetween={0}
       slidesPerView={1}
       autoplay={{
-        delay: 3000,
+        delay: 8000,
         disableOnInteraction: false,
       }}
       pagination={{
         clickable: true,
       }}
       modules={[Pagination, Autoplay]}
-      style={{ height: '100vh' }} // Full-height slider
+      style={{ height: '75vh' }} // Full-height slider
     >
       <SwiperSlide>
         <div
