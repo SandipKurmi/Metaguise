@@ -17,7 +17,7 @@ function Home() {
     <div className='Home'>
       <Swipper />
       {/* <MainContent /> */}
-      <Featured />
+      {/* <Featured /> */}
       <Features />
       <Metavision />
       <Product />

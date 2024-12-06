@@ -17,7 +17,7 @@ export const Swipper = () => {
         clickable: true,
       }}
       modules={[Pagination, Autoplay]}
-      style={{ height: '75vh' }} // Full-height slider
+      style={{ height: '80vh' }} // Full-height slider
     >
       <SwiperSlide>
         <div
