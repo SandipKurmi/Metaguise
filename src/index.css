@@ -22,3 +22,8 @@ code {
 body {
   font-family: 'Degular Display', sans-serif;
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
