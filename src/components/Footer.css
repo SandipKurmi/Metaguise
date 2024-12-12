@@ -42,17 +42,9 @@ body, html {
     height: 50px;
 }
 
-.footer-links {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
 
 .footer-links a {
     color: #fff;
-    margin: 0 15px;
     text-decoration: none;
 }
 
