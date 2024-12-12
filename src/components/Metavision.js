@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import './Metavision.css'; // Assuming your CSS is in this file
 import Coinback from '../assets/coinback.png';
 import { useInView } from 'react-intersection-observer';

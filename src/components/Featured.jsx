@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Carousel from 'react-multi-carousel';
+import { Container } from 'react-bootstrap';
 import './Features.css';
-import 'react-multi-carousel/lib/styles.css';
 import Featured1 from '../assets/Featured/f1.png';
 import Featured2 from '../assets/Featured/f2.png';
 import Featured3 from '../assets/Featured/f3.png';
@@ -10,84 +8,12 @@ import Featured5 from '../assets/Featured/f5.png';
 import Featured6 from '../assets/Featured/f6.png';
 import Featured7 from '../assets/Featured/f7.png';
 import Featured8 from '../assets/Featured/f8.png';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import styled from 'styled-components';
-
-const TallOuterContainer = styled.div.attrs(({ dynamicHeight }) => ({
-  style: { height: `${dynamicHeight}px` },
-}))`
-  position: relative;
-  width: 100%;
-`;
-
-const StickyInnerContainer = styled.div`
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-`;
-
-const HorizontalTranslateContainer = styled.div.attrs(({ translateX }) => ({
-  style: { transform: `translateX(${translateX}px)` },
-}))`
-  position: absolute;
-  height: 100%;
-  will-change: transform;
-`;
-
-const calcDynamicHeight = (objectWidth) => {
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-  return objectWidth - vw + vh + 150;
-};
-
-const handleDynamicHeight = (ref, setDynamicHeight) => {
-  const objectWidth = ref.current.scrollWidth;
-  const dynamicHeight = calcDynamicHeight(objectWidth);
-  setDynamicHeight(dynamicHeight);
-};
-
-const applyScrollListener = (ref, setTranslateX) => {
-  window.addEventListener('scroll', () => {
-    const offsetTop = -ref.current.offsetTop;
-    setTranslateX(offsetTop);
-  });
-};
-
-const Featured = () => {
-  const [dynamicHeight, setDynamicHeight] = useState(null);
-  const [translateX, setTranslateX] = useState(0);
-
-  const containerRef = useRef(null);
-  const objectRef = useRef(null);
-
-  const resizeHandler = () => {
-    handleDynamicHeight(objectRef, setDynamicHeight);
-  };
-
-  useEffect(() => {
-    handleDynamicHeight(objectRef, setDynamicHeight);
-    window.addEventListener('resize', resizeHandler);
-    applyScrollListener(containerRef, setTranslateX);
-  }, []);
-
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3, // Number of items to show on large screens
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2, // Number of items to show on tablet screens
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1, // Number of items to show on mobile screens
-    },
-  };
-
-  const images = [
+const Features = () => {
+  const featuredImages = [
     Featured1,
     Featured2,
     Featured3,
@@ -97,20 +23,59 @@ const Featured = () => {
     Featured7,
     Featured8,
   ];
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(useGSAP);
+
+  useGSAP(() => {
+    const imagesDiv = document.querySelector('.featured-row');
+    let imagesDivWidth = 2250;
+    let amountToScroll = imagesDivWidth - window.innerWidth;
+
+    console.log(imagesDiv, imagesDivWidth, amountToScroll);
+
+    const tween = gsap.to(imagesDiv, {
+      x: -amountToScroll,
+      duration: 3,
+      ease: 'none',
+    });
+
+    ScrollTrigger.create({
+      trigger: '.featured-section',
+      start: 'top 20%',
+      end: '+=' + amountToScroll,
+      pin: true,
+      animation: tween,
+      scrub: 1,
+    });
+  });
 
   return (
-    <TallOuterContainer dynamicHeight={dynamicHeight}>
-      <StickyInnerContainer ref={containerRef}>
-        <HorizontalTranslateContainer translateX={translateX} ref={objectRef}>
-          {images.map((image, index) => (
-            <div className='featured-image' key={index}>
-              <img src={image} alt={`Project ${index + 1}`} />
+    <>
+      <div className='featured-section'>
+        <Container className='featured-projects-section text-center'>
+          <div className='featured-text'>Featured Projects</div>
+          <div className='featured-row-wrapper'>
+            <div
+              className='featured-row'
+              style={{
+                transform: `translateX(-${26}px)`,
+                transition: 'transform 0.5s ease',
+              }}
+            >
+              {featuredImages.map((image, index) => (
+                <div className='featured-image' key={index}>
+                  <img src={image} alt={`Project ${index + 1}`} />
+                </div>
+              ))}
             </div>
-          ))}
-        </HorizontalTranslateContainer>
-      </StickyInnerContainer>
-    </TallOuterContainer>
+          </div>
+          <button className='hover-button' aria-label='See all projects'>
+            <span>See All Projects</span>
+          </button>
+        </Container>
+      </div>
+    </>
   );
 };
 
-export default Featured;
+export default Features;

@@ -25,6 +25,11 @@
 
 }
 
+.font{
+  font-family: Degular Display;
+  font-weight: 900;
+}
+
 .paragraph p {
   margin: 0;
   font-family: Degular Display;
