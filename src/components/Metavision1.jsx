@@ -22,7 +22,7 @@ const Metavision1 = () => {
         start: 'top 50%',
         end: 'top 2%',
         scrub: 5,
-        toggleActions: 'play reverse play reverse',
+        toggleActions: 'play reverse',
       },
     });
 
@@ -58,8 +58,8 @@ const Metavision1 = () => {
       </Row>
       <Row className='justify-content-center mt-4'>
         <Col xs={12} md={8} lg={8}>
-          <div className='paragraph tw-text-gray-500'>
-            <p>
+          <div className='paragraph font tw-text-gray-500'>
+            <p className='font'>
               DRV (Shri Deepak Raheja’s Vision) is the bloodline of all meta{' '}
             </p>
             <p>

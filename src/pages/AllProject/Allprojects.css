@@ -8,10 +8,10 @@ body {
   min-height: 100vh;
   padding: 20px;
 }
+
 .gallery-project{
   max-height: 75vh; /* Limit height to make scrolling visible */
   overflow-y: scroll; /* Enable vertical scrolling */
-  scrollbar-width: thin; /* For Firefox: thinner scroll bar */
   overflow-x: hidden;
 }
 .gallery-project img {
