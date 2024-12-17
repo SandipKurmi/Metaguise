@@ -1,4 +1,3 @@
-import { useEffect, useLayoutEffect } from 'react'; // Import useEffect
 import { AboutHeroSection } from '../../collection';
 import VisionIcon from '../../assets/about/vision.png';
 import MissionIcon from '../../assets/about/mission.png';
@@ -6,6 +5,10 @@ import { VisionAndMission } from '../../collection/about/VisionAndMission/Vision
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Footer from '../../components/Footer';
+import VideoThumb from '../../assets/about/video-thumb.png';
+import { AtAGlanceSection } from '../../collection/about/AtAGlanceSection/AtAGlanceSection';
+import { ReverseHeroSection } from '../../collection/about/ReverseHeroSection/ReverseHeroSection';
+import { MeetTeam } from '../../collection/about/MeetTeam/MeetTeam';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,25 +36,47 @@ const visions = [
 export const About = () => {
   return (
     <>
-    <div className='tw-space-y-8'>
-      <AboutHeroSection />
-      <div className='tw-grid tw-grid-cols-2 tw-gap-4 tw-container tw-mx-auto'>
-        {visions.map((vision) => (
-          <VisionAndMission
-            key={vision.id}
-            title={vision.title}
-            icon={vision.icon}
-            description1={vision.description1}
-            description2={vision.description2}
-          />
-        ))}
-      </div>
+      <div className='tw-space-y-8'>
+        <AboutHeroSection />
+        <div className='tw-grid tw-grid-cols-2 tw-gap-4 tw-container tw-mx-auto'>
+          {visions.map((vision) => (
+            <VisionAndMission
+              key={vision.id}
+              title={vision.title}
+              icon={vision.icon}
+              description1={vision.description1}
+              description2={vision.description2}
+            />
+          ))}
+        </div>
 
-      <div>
-        <div className=''></div>
+        <div
+          className='tw-w-full tw-h-[600px] tw-bg-cover tw-bg-center tw-bg-no-repeat tw-my-14'
+          style={{
+            backgroundImage: `url(${VideoThumb})`,
+            margin: '80px 0px',
+          }}
+        ></div>
+
+        <div className='tw-container tw-mx-auto'>
+          <AtAGlanceSection />
+        </div>
+
+        <div>
+          <ReverseHeroSection />
+        </div>
+
+        <div className='tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-items-center tw-mb-12'>
+          <h1 className='font tw-tracking-wide tw-leading-[50px] tw-text-[64px] tw-text-center '>
+            Meet The Team
+          </h1>
+          <MeetTeam />
+          <button className='hover-button' aria-label='See all projects'>
+            <span>See All Projects</span>
+          </button>
+        </div>
       </div>
-    </div>
-    <Footer/>
+      <Footer />
     </>
   );
 };
