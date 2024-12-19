@@ -79,14 +79,14 @@ const SingleProject = () => {
   return (
     <div className="container main-container">
       <div className="row">
-        <div claassName="col-12">
+        {/* <div claassName="col-12">
           <button
             onClick={() => navigate(-1)}
             className="back-button"
           >
             <span className="arrow">&larr;</span> Back
           </button>
-        </div>
+        </div> */}
         {/* Gallery Section occupying col-9 */}
         <div className="col-9 xs-12">
           <div className="image-grid">
