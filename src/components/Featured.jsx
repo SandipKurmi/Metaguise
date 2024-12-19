@@ -28,10 +28,11 @@ const Features = () => {
 
   useGSAP(() => {
     const imagesDiv = document.querySelector('.featured-row');
-    let imagesDivWidth = 2250;
+    let imagesDivWidth = 2064;
     let amountToScroll = imagesDivWidth - window.innerWidth;
 
     console.log(imagesDiv, imagesDivWidth, amountToScroll);
+    amountToScroll += 80
 
     const tween = gsap.to(imagesDiv, {
       x: -amountToScroll,
