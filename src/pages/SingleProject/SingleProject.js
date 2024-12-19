@@ -108,7 +108,6 @@ const SingleProject = () => {
           <h3 style={{ fontWeight: 'bold' }}>{selectedProject.name.charAt(0).toUpperCase() + selectedProject.name.slice(1)}</h3>
           <div className="sidebar p-4 bg-darkrounded" style={{ marginBottom: '10px' }}>
             <ListGroup variant="flush">
-              {/* Dynamically render the category list */}
               <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('')}>
                 All
               </ListGroup.Item>

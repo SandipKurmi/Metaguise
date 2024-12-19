@@ -3,7 +3,6 @@
   grid-template-columns: repeat(3, 1fr);
   max-height: 75vh; /* Limit height to make scrolling visible */
   overflow-y: scroll; /* Enable vertical scrolling */
-  scrollbar-width: thin; /* For Firefox: thinner scroll bar */
   overflow-x: hidden;
 }
 
@@ -31,7 +30,7 @@
 .grid-item.active:not(.last-row) .grid-image {
   position: absolute;
   width: 200%;
-  height: 200%;
+  height: 205%;
   top: 0; /* Scale from top */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
@@ -58,7 +57,7 @@
 .grid-item.last-row.active .grid-image {
   position: absolute;
   width: 200%;
-  height: 200%;
+  height: 205%;
   bottom: 0; /* Scale from bottom */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   transform-origin: center bottom; /* Scale upwards */

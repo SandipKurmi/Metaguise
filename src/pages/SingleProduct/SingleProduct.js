@@ -40,14 +40,14 @@ const SingleProduct = () => {
   return (
     <div className="container main-container">
       <div className="row">
-      <div claassName="col-12">
+      {/* <div claassName="col-12">
         <button
           onClick={() => navigate(-1)}
           className="back-button"
         >
           <span className="arrow">&larr;</span> Back
         </button>
-      </div>
+      </div> */}
         {/* Gallery Section occupying col-9 */}
         <div className="col-9 xs-12">
           <div className="image-grid">
@@ -67,7 +67,7 @@ const SingleProduct = () => {
         {/* Empty Space col-2 */}
         <div className="col-md-3 col-sm-12 sidebar-section" >
           <h3 style={{ fontWeight: 'bold' }}>{selectedProduct.name.charAt(0).toUpperCase() + selectedProduct.name.slice(1)}</h3>
-          <div className="sidebar p-4 bg-darkrounded">
+          <div className="sidebar p-4 bg-darkrounded tw-text-white">
             <ListGroup variant="flush">
               <ListGroup.Item action variant="dark" style={{ fontSize: '14px' }}>{selectedProduct.description.charAt(0).toUpperCase() + selectedProduct.description.slice(1)}</ListGroup.Item>
             </ListGroup>

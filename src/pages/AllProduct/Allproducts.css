@@ -48,14 +48,14 @@
 
 .list-group-item {
   background-color: #161616 !important;
-  color: #615d5d;
+  color: #fff;
   border: none;
   text-transform: capitalize !important;
   font-size: 14px;
   padding: 5px;
 }
 .list-group-item-dark:hover {
-  color: #615d5d;
+  color: #fff;
   ; /* Keep the same color as default */
 }
 
