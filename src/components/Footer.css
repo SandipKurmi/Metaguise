@@ -75,5 +75,6 @@ body, html {
 
     .footer-links {
         margin-top: 10px;
+        font-size: 16px !important;
     }
 }

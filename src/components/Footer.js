@@ -12,19 +12,19 @@ const Footer = () => {
         <img className='tw-w-40' src={logo} alt='METAGUISE Logo' />
 
         {/* Home Links */}
-        <div className='tw-flex tw-flex-col tw-items-start tw-text-right footer-links'>
+        <div className='tw-text-base tw-flex tw-flex-col tw-items-start tw-text-right footer-links'>
           <a href='#home'>Home</a>
           <a href='#projects'>Projects</a>
           <a href='#products'>Products</a>
         </div>
         {/* About Links */}
-        <div className='tw-flex tw-flex-col footer-links'>
+        <div className='tw-text-base tw-flex tw-flex-col footer-links'>
           <a href='#about'>About Us</a>
           <a href='#contact'>Talk to Us</a>
           <a href='#contact'>Partner With Us</a>
         </div>
         {/* Contact Links */}
-        <div className='tw-flex tw-flex-col tw-gap-4 footer-links'>
+        <div className='tw-flex tw-text-base tw-flex-col tw-gap-4 footer-links'>
           <div className='tw-flex tw-items-center tw-gap-2'>
             <img src={MailIcon} alt='mail' />
             <a href='mailto:contactus@metaguise.com'>contactus@metaguise.com</a>

@@ -39,7 +39,7 @@ const SingleProduct = () => {
   const navigate = useNavigate();
   return (
     <div className="container main-container">
-      <div className="row">
+      <div className="row tw-min-h-[80vh]">
       {/* <div claassName="col-12">
         <button
           onClick={() => navigate(-1)}
