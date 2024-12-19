@@ -21,6 +21,12 @@
   background-color: #171515;
 }
 
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+
 .gallery-item {
   position: relative;
   /* Ensure the text is positioned relative to the image */

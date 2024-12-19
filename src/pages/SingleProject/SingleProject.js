@@ -77,7 +77,7 @@ const SingleProject = () => {
       };
     }, [location]);
   return (
-    <div className="container main-container tw-min-h-[80vh]">
+    <div className="container main-container">
       <div className="row">
         <div claassName="col-12">
           <button
