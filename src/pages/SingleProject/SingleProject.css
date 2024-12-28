@@ -1,7 +1,7 @@
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-height: 75vh; /* Limit height to make scrolling visible */
+  max-height: 53vh; /* Limit height to make scrolling visible */
   overflow-y: scroll; /* Enable vertical scrolling */
   overflow-x: hidden;
 }
@@ -66,7 +66,10 @@
 
 .transition-button {
   align-items: center;
+  display: flex;
   background-color: #171515;
+  overflow: hidden;
+  flex-direction: column;
   border: none;
   border-radius: 10px;
   color: #fff;

@@ -7,14 +7,16 @@ import { useNavigate } from 'react-router-dom';
 import './SingleProject.css';
 
 
+
 const SingleProject = () => {
+  
 
   const location = useLocation();
   const { selectedProject } = location.state || {};
 
   const [clickedIndex, setClickedIndex] = useState(null);
   const [contentToRender, setContentToRender] = useState([]);
-  const gridRef = useRef < HTMLDivElement > (null)
+  const gridRef = useRef(null)
 
   const handleImageClick = (index) => {
     setClickedIndex(clickedIndex === index ? null : index)
@@ -38,14 +40,20 @@ const SingleProject = () => {
   };
 
   const [darkMode, setDarkMode] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
   };
+  const filterImagesByCategory = (category) => {
+    setSelectedCategory(category);
+  };
 
   useEffect(() => {
     setContentToRender(darkMode ? selectedProject.images.filter((item) => item.split('/')[4] === 'night') : selectedProject.images);
-  }, [darkMode]); // Runs every time darkMode updates
+  }, [darkMode, selectedProject.images]); // Runs every time darkMode or images update
 
   const navigate = useNavigate();
   return (
@@ -70,7 +78,7 @@ const SingleProject = () => {
                   handleImageClick(index)
                 }}
               >
-                <img src={`${process.env.PUBLIC_URL}/${image}`} className="grid-image" />
+                <img src={`${process.env.PUBLIC_URL}/${image}`} className="grid-image" alt="Project gallery item" />
               </div>
             ))}
           </div>
@@ -81,58 +89,55 @@ const SingleProject = () => {
           <div className="sidebar p-4 bg-darkrounded" style={{ marginBottom: '10px' }}>
             <ListGroup variant="flush">
               {/* <ListGroup.Item action variant="dark" style={{color: "#fff"}}>Section</ListGroup.Item> */}
-              <ListGroup.Item action variant="dark">
+              <ListGroup.Item action variant="dark" className={selectedCategory === '' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('')}>
                 All
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark">
+              <ListGroup.Item action variant="dark" className={selectedCategory === ' Metasequin' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory(' Metasequin')}>
                 Metasequin
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark">
+              <ListGroup.Item action variant="dark" className={selectedCategory === '  Metafin' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('  Metafin')}>
                 Metafin
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark">
+              <ListGroup.Item action variant="dark" className={selectedCategory === ' Metacassette' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory(' Metacassette')}>
                 Metacassette
               </ListGroup.Item>
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === 'Metapyramid' ? 'highlight' : 'dim'}  onClick={() => filterImagesByCategory('Metapyramid')}>
                 Metapyramid
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
-                Metacoin
-              </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === 'Metacassette Perforated' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('Metacassette Perforated')}>
                 Metacassette Perforated
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === 'Metaflute' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('Metaflute')}>
                 Metaflute
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === 'Metacassette Grooved' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('Metacassette Grooved')}>
                 Metacassette Grooved
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === ' Metalouver' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory(' Metalouver')}>
                 Metalouver
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === ' Metaplank' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory(' Metaplank')}>
                 Metaplank
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === 'Metapyramid' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('Metapyramid')} >
                 Metapyramid
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === 'Metashingle' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('Metashingle')}>
                 Metashingle
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === ' Metafold' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory(' Metafold')}>
                 Metafold
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === 'Solid Panel' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('Solid Panel')}>
                 Solid Panel
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === 'metalouver Grey' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('metalouver Grey')}>
                 metalouver Grey
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark">
+              < ListGroup.Item action variant="dark" className={selectedCategory === 'metalouver Wood' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('metalouver Wood')}>
                 metalouver Wood
               </ListGroup.Item >
-              < ListGroup.Item action variant="dark" >
+              < ListGroup.Item action variant="dark" className={selectedCategory === 'Metagate' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('Metagate')}>
                 Metagate
               </ListGroup.Item >
             </ListGroup>

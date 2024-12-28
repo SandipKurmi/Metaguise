@@ -1,6 +1,7 @@
 /* Sliding from bottom for text */
 .slide-in-text {
   margin-top: 100px;
+  margin-bottom: 70px;
   opacity: 0;
   transform: translateY(50px); /* Initially moved down 50px */
   transition: transform 1s ease-out, opacity 1s ease-out; /* Slow down transition */

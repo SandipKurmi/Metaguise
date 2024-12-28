@@ -13,8 +13,13 @@
 
   input::placeholder,
   textarea::placeholder {
-    color: #888;
+    color: #fbf9f9;
   }
+  .form-text::placeholder {
+    color: rgb(184, 179, 179); /* Change this to your desired color */
+    opacity: 1; /* Ensures the color is fully opaque */
+}
+
 
   .contactus-text p {
     font-size: 84px;
@@ -42,4 +47,5 @@
     letter-spacing: 1px;
     padding: 12px;
     border-radius: 0px;
+    background-color: rgb(45, 45, 45);
   }

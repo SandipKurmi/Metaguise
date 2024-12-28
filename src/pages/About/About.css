@@ -4,7 +4,7 @@
 }
 
 .scroll-text {
-  font-size: 128px;
+  font-size: 64px;
   font-weight: bold;
   letter-spacing: 5px;
 
@@ -197,3 +197,4 @@ h1 span:nth-child(9) { animation-delay: 0.8s; }
 button:hover{
   background-color: transparent;
 }
+

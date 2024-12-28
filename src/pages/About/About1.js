@@ -14,8 +14,8 @@ import Image7 from '../../assets/Team/sahil.png';
 import Image8 from '../../assets/Team/sumit.png';
 import About1 from '../../assets/about1.png';
 import About2 from '../../assets/about2.png';
-import Vision from '../../assets/vision.png';
-import Mision from '../../assets/mision.png';
+//import Vision from '../../assets/vision.png';
+//import Mision from '../../assets/mision.png';
 
 
 function About() {

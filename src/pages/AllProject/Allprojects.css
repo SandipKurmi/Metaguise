@@ -10,7 +10,7 @@ body {
 }
 
 .gallery-project{
-  max-height: 75vh; /* Limit height to make scrolling visible */
+  max-height: 53vh; /* Limit height to make scrolling visible */
   overflow-y: scroll; /* Enable vertical scrolling */
   overflow-x: hidden;
 }
@@ -31,6 +31,14 @@ body {
   color: #fff;
 }
 
+.highlight {
+  background-color: #000000; /* Change to your desired highlight color */
+  color: #f8f4f4; /* Text color for highlighted item */
+}
+
+.dim {
+  opacity: 0.5; /* Dimmed effect for non-selected items */
+}
 
 .sidebar h2 {
   font-size: 24px;

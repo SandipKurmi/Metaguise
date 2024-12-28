@@ -4,7 +4,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding-top: 5px;
-  max-height: 75vh; /* Limit height to make scrolling visible */
+  max-height: 52vh; /* Limit height to make scrolling visible */
   overflow-y: scroll; /* Enable vertical scrolling */
   overflow-x: hidden;
 }
@@ -50,6 +50,15 @@ body, html {
   background-color: #171515;
   border-radius: 20px;
   color: #fff;
+}
+
+.highlight {
+  background-color: #000000; /* Change to your desired highlight color */
+  color: #f8f4f4; /* Text color for highlighted item */
+}
+
+.dim {
+  opacity: 0.5; /* Dimmed effect for non-selected items */
 }
 
 .list-group-item {

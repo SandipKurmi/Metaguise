@@ -13,7 +13,7 @@ const SingleProduct = () => {
   const { selectedProduct } = location.state || {};
 
   const [clickedIndex, setClickedIndex] = useState(null);
-  const gridRef = useRef < HTMLDivElement > (null)
+  const gridRef = useRef(null)
 
   const handleImageClick = (index) => {
     setClickedIndex(clickedIndex === index ? null : index)
@@ -30,7 +30,7 @@ const SingleProduct = () => {
     return () => {
       document.removeEventListener('click', handleOutsideClick)
     }
-  }, []);
+  }, [gridRef]);
 
   const isLastRow = (index) => {
     return index >= selectedProduct.images.length - (selectedProduct.images.length % 3 === 0 ? 3 : selectedProduct.images.length % 3);
@@ -40,14 +40,14 @@ const SingleProduct = () => {
   return (
     <div className="container main-container">
       <div className="row">
-      {/* <div claassName="col-12">
+      <div className="col-12">
         <button
           onClick={() => navigate(-1)}
           className="back-button"
         >
           <span className="arrow">&larr;</span> Back
         </button>
-      </div> */}
+      </div>
         {/* Gallery Section occupying col-9 */}
         <div className="col-9 xs-12">
           <div className="image-grid">
@@ -59,7 +59,7 @@ const SingleProduct = () => {
                   handleImageClick(index)
                 }}
               >
-                <img src={`${process.env.PUBLIC_URL}/${image}`} className="grid-image" />
+                <img src={`${process.env.PUBLIC_URL}/${image}`} className="grid-image" alt={`${selectedProduct.name} view ${index + 1}`} />
               </div>
             ))}
           </div>

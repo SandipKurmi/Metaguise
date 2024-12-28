@@ -435,13 +435,13 @@ function Allprojects() {
           <div className="sidebar p-4">
             <ListGroup variant="flush">
               {/* <ListGroup.Item action variant="dark" style={{color: "#fff"}}>Section</ListGroup.Item> */}
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('')}>
+              <ListGroup.Item action variant="dark"  className={selectedCategory === '' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('')}>
                 All
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('Residential')}>
+              <ListGroup.Item action variant="dark" className={selectedCategory === 'Residential' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('Residential')}>
                 Residential
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('Commercial')}>
+              <ListGroup.Item action variant="dark" className={selectedCategory === 'commercial' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('Commercial')}>
                 Commercial
               </ListGroup.Item>
             </ListGroup>

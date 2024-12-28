@@ -369,19 +369,19 @@ const Allproducts = () => {
           <div className="sidebar p-4">
             <ListGroup variant="flush">
               {/* <ListGroup.Item action variant="dark" style={{color: "#fff"}}>Section</ListGroup.Item> */}
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('')}>
+              <ListGroup.Item action variant="dark"  className={selectedCategory === '' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('')}>
                 All
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('MetaParametric')}>
+              <ListGroup.Item action variant="dark" className={selectedCategory === 'MetaParametric' ? 'highlight' : 'dim'}  onClick={() => filterImagesByCategory('MetaParametric')}>
                 MetaParametric
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('MetaForm')}>
+              <ListGroup.Item action variant="dark" className={selectedCategory === 'MetaForm' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('MetaForm')}>
                 MetaForm
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('MetaFunction')}>
+              <ListGroup.Item action variant="dark" className={selectedCategory === 'MetaFunction' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('MetaFunction')}>
                 MetaFunction
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('MetaSurface')}>
+              <ListGroup.Item action variant="dark" className={selectedCategory === 'MetaSurface' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('MetaSurface')}>
                 MetaSurfaces
               </ListGroup.Item>
             </ListGroup>

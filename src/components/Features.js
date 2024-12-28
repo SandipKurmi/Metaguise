@@ -46,13 +46,14 @@ const Features = () => {
       { threshold: 1.0 } // Trigger when 100% of the element is visible
     );
 
-    if (wrapperRef.current) {
-      observer.observe(wrapperRef.current);
+    const currentRef = wrapperRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (wrapperRef.current) {
-        observer.unobserve(wrapperRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
       unlockScroll();
     };

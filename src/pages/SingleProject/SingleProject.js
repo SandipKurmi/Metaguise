@@ -15,14 +15,14 @@ const SingleProject = () => {
 
   const [clickedIndex, setClickedIndex] = useState(null);
   const [contentToRender, setContentToRender] = useState([]);
-  const gridRef = useRef < HTMLDivElement > (null)
+  const gridRef = useRef(null)
   const [selectedCategory, setSelectedCategory] = useState('');
   const [darkMode, setDarkMode] = useState(false);
-  const [categories, setCategories] = useState(Array.from(new Set(
+  const categories = Array.from(new Set(
     selectedProject.images
       .map((item) => item.split('/')[4] !== 'night' ? item.split('/')[4] : null)
       .filter((item) => item)
-  )));
+  ));
 
   const handleImageClick = (index) => {
     setClickedIndex(clickedIndex === index ? null : index)
@@ -39,7 +39,7 @@ const SingleProject = () => {
     return () => {
       document.removeEventListener('click', handleOutsideClick)
     }
-  }, []);
+  }, [gridRef]);
 
   const isLastRow = (index) => {
     return index >= selectedProject.images.length - (selectedProject.images.length % 3 === 0 ? 3 : selectedProject.images.length % 3);
@@ -51,7 +51,7 @@ const SingleProject = () => {
 
   useEffect(() => {
     setContentToRender(darkMode ? selectedProject.images.filter((item) => item.split('/')[4] === 'night') : selectedProject.images);
-  }, [darkMode]); // Runs every time darkMode updates
+  }, [darkMode, selectedProject.images]); // Runs when darkMode or images change
 
   function filterImagesByCategory(category) {
     setSelectedCategory(category);
@@ -79,14 +79,14 @@ const SingleProject = () => {
   return (
     <div className="container main-container">
       <div className="row">
-        {/* <div claassName="col-12">
-          <button
-            onClick={() => navigate(-1)}
-            className="back-button"
-          >
-            <span className="arrow">&larr;</span> Back
-          </button>
-        </div> */}
+        <div className="col-12">
+                <button
+                  onClick={() => navigate(-1)}
+                  className="back-button"
+                >
+                  <span className="arrow">&larr;</span> Back
+                </button>
+              </div>
         {/* Gallery Section occupying col-9 */}
         <div className="col-9 xs-12">
           <div className="image-grid">
@@ -98,7 +98,7 @@ const SingleProject = () => {
                   handleImageClick(index)
                 }}
               >
-                <img src={`${process.env.PUBLIC_URL}/${image}`} className="grid-image" />
+                <img src={`${process.env.PUBLIC_URL}/${image}`} className="grid-image" alt={`Project item ${index + 1}`} />
               </div>
             ))}
           </div>
@@ -108,7 +108,7 @@ const SingleProject = () => {
           <h3 style={{ fontWeight: 'bold' }}>{selectedProject.name.charAt(0).toUpperCase() + selectedProject.name.slice(1)}</h3>
           <div className="sidebar p-4 bg-darkrounded" style={{ marginBottom: '10px' }}>
             <ListGroup variant="flush">
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('')}>
+              <ListGroup.Item action variant="dark" className={selectedCategory === '' ? 'highlight' : 'dim'}  onClick={() => filterImagesByCategory('')}>
                 All
               </ListGroup.Item>
               {categories.map((category, index) => (

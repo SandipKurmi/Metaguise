@@ -495,13 +495,13 @@ function Allprojects() {
           <div className="sidebar p-4">
             <ListGroup variant="flush">
               {/* <ListGroup.Item action variant="dark" style={{color: "#fff"}}>Section</ListGroup.Item> */}
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('')}>
+              <ListGroup.Item action variant="dark"  className={selectedCategory === '' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('')}>
                 All
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('residential')}>
+              <ListGroup.Item action variant="dark"  className={selectedCategory === 'residential' ? 'highlight' : 'dim'} onClick={() => filterImagesByCategory('residential')}>
                 residential
               </ListGroup.Item>
-              <ListGroup.Item action variant="dark" onClick={() => filterImagesByCategory('commercial')}>
+              <ListGroup.Item action variant="dark" className={selectedCategory === 'commercial' ? 'highlight' : 'dim'}  onClick={() => filterImagesByCategory('commercial')}>
                 commercial
               </ListGroup.Item>
             </ListGroup>

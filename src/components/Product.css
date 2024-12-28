@@ -55,7 +55,7 @@
 .arrow-icon {
     width: 15px;
     height: 15px;
-    margin-left: 5px;
+    margin-left: 10px;
     opacity: 0;
     transition: opacity 0.3s ease;
     transition: opacity 0.3s ease, transform 0.3s ease;
