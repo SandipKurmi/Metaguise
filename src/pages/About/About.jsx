@@ -35,11 +35,8 @@ const visions = [
 export const About = () => {
   return (
     <>
-      <div className="tw-space-y-8">
-        {/* <AboutHeroSection /> */}
+      <div>
         <AboutHeroSection />
-
-        {/* <div className="tw-container tw-mx-auto"> */}
 
         <div className="tw-grid tw-grid-cols-2 tw-gap-4 tw-container tw-mx-auto">
           {visions.map((vision) => (
@@ -53,23 +50,24 @@ export const About = () => {
           ))}
         </div>
 
-        <div
-          className="tw-w-full tw-h-[600px] tw-bg-cover tw-bg-center tw-bg-no-repeat tw-my-14"
-          style={{
-            margin: "80px 0px",
-          }}
-        >
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/RRwuG5FdeNc?rel=0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+        <div className="tw-container tw-mx-auto tw-px-4 tw-my-20 md:tw-my-14">
+          <div
+            className="tw-relative tw-w-full tw-overflow-hidden"
+            style={{
+              paddingTop: "56.25%", // 16:9 Aspect Ratio
+            }}
+          >
+            <iframe
+              className="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full"
+              src="https://www.youtube.com/embed/RRwuG5FdeNc?rel=0"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
 
-        <div className="tw-container tw-mx-auto">
+        <div>
           <AtAGlanceSection />
         </div>
 

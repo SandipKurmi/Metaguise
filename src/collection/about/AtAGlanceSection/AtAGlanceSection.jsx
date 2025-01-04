@@ -49,16 +49,19 @@ export const AtAGlanceSection = () => {
       icon: AboutIcon7
     },
   ];
+
   return (
-    <div className='tw-grid sm:tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-x-6 tw-gap-y-6' >
-      {glanceData.map((glance) => (
-        <GlanceBox
-          key={glance.id}
-          heading={glance.heading}
-          icon={glance.icon}
-          isMainHeading={glance.heading === 'Metaguise At A Glance'}
-        />
-      ))}
+    <div className="tw-container tw-mx-auto tw-px-4 tw-py-16">
+      <div className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-6 tw-justify-items-center">
+        {glanceData.map((item) => (
+          <GlanceBox
+            key={item.id}
+            heading={item.heading}
+            icon={item.icon}
+            isMainHeading={item.id === 1}
+          />
+        ))}
+      </div>
     </div>
   );
 };

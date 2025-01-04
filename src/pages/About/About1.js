@@ -1,22 +1,21 @@
-import React from 'react';
-import './About.css';
+import React from "react";
+import "./About.css";
 import "./VisionAndMission.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import Footer from '../../components/Footer'; 
-import { Container, Row, Col } from 'react-bootstrap';
-import Image1 from '../../assets/Team/anuj.png';
-import Image2 from '../../assets/Team/ashish.png';
-import Image3 from '../../assets/Team/biren.png';
-import Image4 from '../../assets/Team/kavita.png';
-import Image5 from '../../assets/Team/manvendra.png';
-import Image6 from '../../assets/Team/rashmi.png';
-import Image7 from '../../assets/Team/sahil.png';
-import Image8 from '../../assets/Team/sumit.png';
-import About1 from '../../assets/about1.png';
-import About2 from '../../assets/about2.png';
-import Vision from '../../assets/vision.png';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Footer from "../../components/Footer";
+import { Container, Row, Col } from "react-bootstrap";
+import Image1 from "../../assets/Team/anuj.png";
+import Image2 from "../../assets/Team/ashish.png";
+import Image3 from "../../assets/Team/biren.png";
+import Image4 from "../../assets/Team/kavita.png";
+import Image5 from "../../assets/Team/manvendra.png";
+import Image6 from "../../assets/Team/rashmi.png";
+import Image7 from "../../assets/Team/sahil.png";
+import Image8 from "../../assets/Team/sumit.png";
+import About1 from "../../assets/about1.png";
+import About2 from "../../assets/about2.png";
+import Vision from "../../assets/vision.png";
 
 function About() {
   // useEffect(() => {
@@ -25,21 +24,22 @@ function About() {
   //   });
   // }, []);
 
-
   return (
     <div className="container-fluid text-center">
       <div className="content">
-
-      {/* <main> */}
+        {/* <main> */}
         <h1 className="animated-text">
           {Array.from("Metaguise").map((letter, index) => (
-            <span key={index} className="letter" style={{ animationDelay: `${index * 0.3}s` }}>
+            <span
+              key={index}
+              className="letter"
+              style={{ animationDelay: `${index * 0.3}s` }}
+            >
               {letter}
             </span>
           ))}
         </h1>
-      {/* </main> */}
-
+        {/* </main> */}
 
         {/* <h1 class="animated-text">
           <span>M</span><span>e</span><span>t</span><span>a</span><span>g</span><span>u</span><span>i</span><span>s</span><span>e</span>
@@ -60,7 +60,12 @@ function About() {
             {/* Centered Text */}
             <div className="centered-text text-white">
               <p className="text-center">
-                DRV (Shri Deepak Raheja’s Vision) is the bloodline of all meta organizations, based on the life lessons taught by our founding father specifically focusing on a mindset  “Anything is Possible” when the will is unbreakable, standards un-challengable, energy in-exhaustible, morals un-corruptable and the aura unstoppable.
+                DRV (Shri Deepak Raheja’s Vision) is the bloodline of all meta
+                organizations, based on the life lessons taught by our founding
+                father specifically focusing on a mindset  “Anything is
+                Possible” when the will is unbreakable, standards
+                un-challengable, energy in-exhaustible, morals un-corruptable
+                and the aura unstoppable.
               </p>
             </div>
             {/* Right Image with Animation */}
@@ -95,39 +100,97 @@ function About() {
         </Container>
         {/* Video section */}
 
-        <iframe width="100%" height="500" src="https://www.youtube.com/embed/a5ywhvysBJA?si=Tr90VnKyJ5pw6NWp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe
+          width="100%"
+          height="500"
+          src="https://www.youtube.com/embed/a5ywhvysBJA?si=Tr90VnKyJ5pw6NWp"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
 
         {/*image Slider SEction */}
         <div className="container my-5">
           <h1 className="text-center">Meet The Team</h1>
-          <div id="teamCarousel" className="carousel slide" data-bs-ride="carousel">
+          <div
+            id="teamCarousel"
+            className="carousel slide"
+            data-bs-ride="carousel"
+          >
             <div className="carousel-inner">
               {/* First Item */}
               <div className="carousel-item active">
                 <div className="d-flex justify-content-center">
-                  <img src={Image1} className="team-member-img" alt="Team Member 1" />
-                  <img src={Image2} className="team-member-img" alt="Team Member 2" />
-                  <img src={Image3} className="team-member-img" alt="Team Member 3" />
-                  <img src={Image4} className="team-member-img" alt="Team Member 4" />
+                  <img
+                    src={Image1}
+                    className="team-member-img"
+                    alt="Team Member 1"
+                  />
+                  <img
+                    src={Image2}
+                    className="team-member-img"
+                    alt="Team Member 2"
+                  />
+                  <img
+                    src={Image3}
+                    className="team-member-img"
+                    alt="Team Member 3"
+                  />
+                  <img
+                    src={Image4}
+                    className="team-member-img"
+                    alt="Team Member 4"
+                  />
                 </div>
               </div>
               {/* Second Item */}
               <div className="carousel-item">
                 <div className="d-flex justify-content-center">
-                  <img src={Image5} className="team-member-img" alt="Team Member 5" />
-                  <img src={Image6} className="team-member-img" alt="Team Member 6" />
-                  <img src={Image7} className="team-member-img" alt="Team Member 7" />
-                  <img src={Image8} className="team-member-img" alt="Team Member 8" />
+                  <img
+                    src={Image5}
+                    className="team-member-img"
+                    alt="Team Member 5"
+                  />
+                  <img
+                    src={Image6}
+                    className="team-member-img"
+                    alt="Team Member 6"
+                  />
+                  <img
+                    src={Image7}
+                    className="team-member-img"
+                    alt="Team Member 7"
+                  />
+                  <img
+                    src={Image8}
+                    className="team-member-img"
+                    alt="Team Member 8"
+                  />
                 </div>
               </div>
             </div>
             {/* Controls */}
-            <button className="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
-              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#teamCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
               <span className="visually-hidden">Previous</span>
             </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
-              <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#teamCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
               <span className="visually-hidden">Next</span>
             </button>
           </div>
@@ -135,10 +198,7 @@ function About() {
       </div>
       <Footer />
     </div>
-
   );
-};
+}
 
 export default About;
-
-
