@@ -3,7 +3,7 @@ import "./ReverseHeroSection.css";
 
 export const ReverseHeroSection = () => {
   return (
-    <div className="tw-w-full tw-my-40">
+    <div className="tw-w-full tw-my-20">
       <div className="tw-flex tw-flex-col md:tw-flex-row tw-max-w-[1440px] tw-mx-auto">
         <div className="tw-w-full md:tw-w-[40%] tw-pl-0">
           <img

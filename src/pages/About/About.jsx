@@ -17,7 +17,7 @@ export const About = () => {
 
         <VisionAndMission />
 
-        <div className="tw-container tw-mx-auto tw-px-4 tw-my-20 md:tw-my-14">
+        <div className="tw-container tw-mx-auto tw-px-4 tw-my-15 md:tw-my-10">
           <div
             className="tw-relative tw-w-full tw-overflow-hidden"
             style={{
