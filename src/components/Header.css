@@ -3,154 +3,109 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 80px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  padding: clamp(15px, 2vw, 20px) clamp(20px, 4vw, 80px);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.3)
+  );
   color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  position: relative; /* Ensure it's positioned relative to adjust its top value */
- 
-}
-
-.logo img {
-  max-height: 50px;
-  width: auto;
-}
-
-.social-icons {
-  display: flex;
-  gap: 15px;
-}
-
-.icon {
-  color: #fff;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.menu {
-  font-size: 24px;
-  cursor: pointer;
+.header-left,
+.header-center,
+.header-right {
   display: flex;
   align-items: center;
 }
 
-/* Default Flex Alignment */
-.header-left, .header-center, .header-right {
+.header-left {
   flex: 1;
-  text-align: center;
+  justify-content: flex-start;
 }
 
-.header-left {
-  text-align: left;
+.header-center {
+  flex: 1;
+  justify-content: center;
 }
 
 .header-right {
-  text-align: right;
+  flex: 1;
+  justify-content: flex-end;
 }
 
-/* Media Queries */
-
-/* Extra Large Screens (Desktops, ≥1200px) */
-@media (min-width: 1200px) {
-  .header {
-    padding: 20px 100px;
-  }
-
-  .logo {
-    font-size: 28px;
-    
-  }
-
-  .icon {
-    font-size: 22px;
-  }
+.logo {
+  height: clamp(30px, 4vw, 50px);
+  width: auto;
+  object-fit: contain;
 }
 
-/* Large Screens (Laptops, 992px to 1199px) */
-@media (max-width: 1199px) and (min-width: 992px) {
-  .header {
-    padding: 15px 60px;
-  }
-
-  .logo {
-    font-size: 26px;
-  }
-
-  .icon {
-    font-size: 20px;
-  }
+.social-icons {
+  display: flex;
+  gap: clamp(10px, 1.5vw, 15px);
 }
 
-/* Medium Screens (Tablets, 768px to 991px) */
-@media (max-width: 991px) and (min-width: 768px) {
-  .header {
-    padding: 15px 40px;
-  }
-
-  .logo img {
-    max-height: 45px;
-  }
-
-  .icon {
-    font-size: 18px;
-  }
+.icon {
+  color: #fff;
+  font-size: clamp(16px, 1.5vw, 20px);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 
-/* Small Screens (Phones, 576px to 767px) */
-@media (max-width: 767px) and (min-width: 576px) {
+.icon:hover {
+  opacity: 0.8;
+}
+
+.menu {
+  font-size: clamp(20px, 2vw, 24px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.menu:hover {
+  opacity: 0.8;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 10px 20px;
+    justify-content: space-between;
   }
 
-  .header-left, .header-center, .header-right {
-    text-align: center;
-    flex: none;
-    width: 100%;
-    padding: 10px 0;
+  .header-left {
+    display: none;
+  }
+
+  .header-center {
+    flex: 0 0 auto;
+    margin: 0;
+    justify-content: flex-start;
+  }
+
+  .header-right {
+    flex: 0 0 auto;
+  }
+
+  .logo {
+    height: 30px;
+    display: block;
   }
 
   .menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    font-size: 20px;
+    margin-left: 15px;
   }
 }
 
-/* Extra Small Screens (Extra Small Phones, <576px) */
-@media (max-width: 575px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 15px;
-  }
-
-  .logo img {
-    max-height: 40px;
-  }
-  .logo{
-    top: -23px; /* Move it slightly upwards */
-  }
-
-  .header-left, .header-center, .header-right {
-    text-align: center;
-    flex: none;
-    width: 100%;
-    padding: 10px 0px 0px 0px;
-  }
-
-  .icon {
-    font-size: 16px;
-  }
-
-  .menu {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
+/* Animation for drawer open/close */
+.drawer {
+  transition: transform 0.3s ease-in-out;
 }
