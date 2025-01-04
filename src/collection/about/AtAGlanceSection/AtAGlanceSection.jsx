@@ -50,12 +50,13 @@ export const AtAGlanceSection = () => {
     },
   ];
   return (
-    <div className='tw-grid sm:tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-x-6 tw-gap-y-6'>
+    <div className='tw-grid sm:tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-x-6 tw-gap-y-6' >
       {glanceData.map((glance) => (
         <GlanceBox
           key={glance.id}
           heading={glance.heading}
           icon={glance.icon}
+          isMainHeading={glance.heading === 'Metaguise At A Glance'}
         />
       ))}
     </div>

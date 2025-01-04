@@ -5,10 +5,10 @@ import { VisionAndMission } from '../../collection/about/VisionAndMission/Vision
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Footer from '../../components/Footer';
-import VideoThumb from '../../assets/about/video-thumb.png';
+//import VideoThumb from '../../assets/about/video-thumb.png';
 import { AtAGlanceSection } from '../../collection/about/AtAGlanceSection/AtAGlanceSection';
 import { ReverseHeroSection } from '../../collection/about/ReverseHeroSection/ReverseHeroSection';
-import { MeetTeam } from '../../collection/about/MeetTeam/MeetTeam';
+//import { MeetTeam } from '../../collection/about/MeetTeam/MeetTeam';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,12 +51,21 @@ export const About = () => {
         </div>
 
         <div
-          className='tw-w-full tw-h-[600px] tw-bg-cover tw-bg-center tw-bg-no-repeat tw-my-14'
-          style={{
-            backgroundImage: `url(${VideoThumb})`,
-            margin: '80px 0px',
-          }}
-        ></div>
+  className='tw-w-full tw-h-[600px] tw-bg-cover tw-bg-center tw-bg-no-repeat tw-my-14'
+  style={{
+    margin: '80px 0px',
+  }}
+>
+  <iframe
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/RRwuG5FdeNc?rel=0"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+</div>
 
         <div className='tw-container tw-mx-auto'>
           <AtAGlanceSection />
@@ -66,7 +75,7 @@ export const About = () => {
           <ReverseHeroSection />
         </div>
 
-        <div className='tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-items-center tw-mb-12'>
+        {/* <div className='tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-items-center tw-mb-12'>
           <h1 className='font tw-tracking-wide tw-leading-[50px] tw-text-[64px] tw-text-center '>
             Meet The Team
           </h1>
@@ -74,7 +83,7 @@ export const About = () => {
           <button className='hover-button' aria-label='See all projects'>
             <span>See All Projects</span>
           </button>
-        </div>
+        </div> */}
       </div>
       <Footer />
     </>

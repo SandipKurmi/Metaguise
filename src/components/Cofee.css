@@ -1,146 +1,99 @@
-
-
 .cofee-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #222222 100%);
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 100px;
+  height: 70vh; /* Full viewport height */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #222222 100%);
+  padding: 20px; /* Add some padding */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 .cofee-section {
-    flex: 1;
-    max-width: 50%;
+  text-align: left; /* Center align text */
+  flex: 1; /* Take up equal space */
+  max-width: 50%; /* Limit width to 50% */
+  margin-left: 60px;
 }
 
 .cofee-section h1 {
-    font-family: Degular Display;
-    font-size: 80px;
-    font-weight: 900;
-    line-height: 70px;
-    text-align: left;
+  font-family: 'Degular Display', sans-serif;
+  font-size: 96px; /* Fixed font size */
+  font-weight: 500;
+  line-height: 1.2; /* Adjust line height */
+  margin: 0; /* Remove default margin */
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin-left: 10px;
+  margin-right: 5px;
+  color: #fff; /* Ensure text color is visible */
+}
+
+.hover-button {
+  margin-top: 20px; /* Add some space above the button */
+  padding: 10px 20px; /* Add padding to the button */
+  font-size: 16px; /* Set font size */
+  background-color: #333; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  margin-left: 5%;
+  border-radius: 5px; /* Add border radius */
+  cursor: pointer; /* Change cursor on hover */
+
 
 }
-.image-section img {
-    max-width: 100%;
-    height: auto;
+
+
+.image-section {
+  flex: 1; /* Take up equal space */
+  max-width: 50%;
+  margin-right: 0%;
+  text-align: right; /* Right align image */
 }
-/* Large Screens (1200px and above) */
-@media (min-width: 1200px) {
-    .cofee-section h1 {
-      font-size: 90px;
-      line-height: 80px;
-    }
-  
-    .cofee-content {
-      padding: 60px;
-    }
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0; /* Center the image and add margin */
+}
+
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .cofee-content {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center align text */
   }
-  
-  /* Medium Screens (992px to 1199px) */
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .cofee-section h1 {
-      font-size: 70px;
-      line-height: 65px;
-    }
-  
-    .cofee-content {
-      flex-direction: row;
-      padding: 40px;
-    }
+
+  .cofee-section {
+    text-align: center; /* Center align text */
+    max-width: 100%; /* Full width */
   }
-  
-  /* Small Screens (768px to 991px) */
-  @media (min-width: 768px) and (max-width: 991px) {
-    .cofee-section h1 {
-      font-size: 50px;
-      line-height: 55px;
-    }
-  
-    .cofee-content {
-      flex-direction: column;
-      text-align: center;
-      padding: 30px;
-    }
-  
-    .cofee-section {
-      max-width: 100%;
-    }
-  
-    .image-section img {
-      max-width: 80%;
-    }
+
+  .image-section {
+    text-align: center; /* Center align image */
+    max-width: 100%; /* Full width */
   }
-  
-  /* Extra Small Screens (576px to 767px) */
-  @media (max-width: 767px) {
-    .cofee-section h1 {
-      font-size: 40px;
-      line-height: 45px;
-    }
-  
-    .cofee-content {
-      flex-direction: column;
-      gap: 20px;
-      padding: 20px;
-    }
-  
-    .image-section img {
-      width: 100%;
-    }
+
+  .cofee-section h1 {
+    font-size: 72px; /* Adjust font size for smaller screens */
   }
-  
-  /* Very Small Screens (Below 576px) */
-  @media (max-width: 575px) {
-    .cofee-section h1 {
-      font-size: 30px;
-      line-height: 35px;
-    }
-  
-    .cofee-content {
-      padding: 15px;
-    }
-  
-    .image-section img {
-      width: 100%;
-    }
-  
-    .cofee-section h1 {
-      text-align: center;
-    }
+
+  .hover-button {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
   }
-  
-  /* Mobile Portrait (max-width 480px) */
-  @media (max-width: 480px) {
-    .cofee-section h1 {
-      font-size: 28px;
-      line-height: 30px;
-    }
-  
-    .cofee-content {
-      padding: 10px;
-    }
-  
-    .image-section img {
-      width: 100%;
-      height: auto;
-    }
+}
+
+@media (max-width: 576px) {
+  .cofee-section h1 {
+    font-size: 48px; /* Adjust font size for smaller screens */
   }
-  
-  /* Mobile Landscape (max-width 768px) */
-  @media (max-width: 768px) {
-    .cofee-section h1 {
-      font-size: 38px;
-      line-height: 40px;
-    }
-  
-    .cofee-content {
-      flex-direction: column;
-      padding: 15px;
-    }
-  
-    .image-section img {
-      width: 90%;
-    }
+
+  .hover-button {
+    font-size: 12px; /* Adjust font size for smaller screens */
+    padding: 6px 12px; /* Adjust padding for smaller screens */
   }
+}

@@ -28,8 +28,47 @@
   white-space: nowrap;
   animation: scroll 20s linear infinite;
   width: max-content; /* Only takes as much width as needed */
-  padding-right: 50px; /* Adjust to ensure extra space at the end */
+  padding-right: 0px; /* Adjust to ensure extra space at the end */
 }
+
+
+.featured-image img {
+  width: 220px; /* Adjust based on actual image width */
+  height: auto;
+}
+
+/* Featured Image Hover Effects -------------------------------------- */
+.featured-image {
+  flex: 0 0 auto;
+  transition: transform 0.3s ease, filter 0.3s;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Icon overlay */
+.icon-overlay {
+  position: absolute;
+  bottom: 30px; /* Distance from the bottom of the image */
+  right: 25px; /* Distance from the right of the image */
+  opacity: 0; /* Initially hide the icon */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  pointer-events: none; /* Make sure the icon doesn't block clicks */
+}
+
+/* Show icon when image is hovered */
+.featured-image:hover .icon-overlay {
+  opacity: 1; /* Show icon on hover */
+  transform: translateY(0); /* Icon should stay in place */
+}
+
+/* Optional: Hover effect for image */
+.featured-image:hover img {
+  opacity: 0.8; /* Slight fade effect on image */
+}
+
+/* --------------------------------------------------------------------------------- */
+
 
 /* Featured Image Hover Effects */
 .featured-image {

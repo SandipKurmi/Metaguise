@@ -509,7 +509,7 @@ function Allprojects() {
           <button class="dream-button"><span>Build Your Dream</span></button>
         </Col>
       </Row>
-      <Footer />
+      <Footer className="all-projects-footer"/>
     </Container>
   );
 }

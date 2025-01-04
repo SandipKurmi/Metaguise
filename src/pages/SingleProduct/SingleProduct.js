@@ -41,16 +41,16 @@ const SingleProduct = () => {
     <div className="container main-container">
       <div className="row">
       <div className="col-12">
-        <button
-          onClick={() => navigate(-1)}
-          className="back-button"
-        >
-          <span className="arrow">&larr;</span> Back
-        </button>
+      <button
+            onClick={() => navigate(-1)}
+            className="back-button"
+          >
+            <span className="arrow">&larr; Back</span> 
+          </button>
       </div>
         {/* Gallery Section occupying col-9 */}
-        <div className="col-9 xs-12">
-          <div className="image-grid">
+        <div className="col-9 xs-12" >
+          <div className="image-grid" style={{maxHeight:'90vh'}}>
             {selectedProduct.images.map((image, index) => (
               <div
                 key={index}
@@ -107,6 +107,7 @@ const SingleProduct = () => {
           <button class="dream-button"><span>Build Your Dream</span></button>        </div>
       </div>
       <Footer />
+    
     </div>
   );
 };

@@ -16,7 +16,7 @@
 
 /* Add a zoom-out and size increase effect */
 .image-brochure-container:hover {
-  transform: scale(1.20); /* Increases the overall size of the container */
+  transform: scale(1.2); /* Increases the overall size of the container */
 }
 
 .image-brochure-container img {
@@ -45,7 +45,10 @@
   font-weight: 900;
   opacity: 0; /* Hidden by default */
   transition: opacity 1s ease; /* Increased to 1s */
-  font-family: 'Degular Display';
+  font-family: "Degular Display";
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .image-brochure-container:hover .brochure-overlay {

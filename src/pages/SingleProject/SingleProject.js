@@ -18,6 +18,13 @@ const SingleProject = () => {
   const gridRef = useRef(null)
   const [selectedCategory, setSelectedCategory] = useState('');
   const [darkMode, setDarkMode] = useState(false);
+  const [activeButton, setActiveButton] = useState(null);
+  
+  const handleButtonClick = (index) => {
+    setActiveButton(activeButton === index ? null : index);
+  };
+
+
   const categories = Array.from(new Set(
     selectedProject.images
       .map((item) => item.split('/')[4] !== 'night' ? item.split('/')[4] : null)
@@ -27,6 +34,7 @@ const SingleProject = () => {
   const handleImageClick = (index) => {
     setClickedIndex(clickedIndex === index ? null : index)
   }
+  
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -84,7 +92,7 @@ const SingleProject = () => {
                   onClick={() => navigate(-1)}
                   className="back-button"
                 >
-                  <span className="arrow">&larr;</span> Back
+                  <span className="arrow">&larr;  Back</span>
                 </button>
               </div>
         {/* Gallery Section occupying col-9 */}
@@ -126,15 +134,22 @@ const SingleProject = () => {
           <div className={darkMode ? 'dark-mode' : 'light-mode'}>
             <div className="header-container">
               <p className="time-text">Time</p>
-              <button className="toggle-button" onClick={toggleTheme}>
-                {darkMode ? <FaMoon className="icon" /> : <FaSun className="icon" />}
-              </button>
+              <div className={`switch ${darkMode ? 'active' : ''}`} onClick={toggleTheme}>
+                <input type="checkbox" checked={darkMode} onChange={toggleTheme} />
+                <span className="slider">
+                  <FaSun className="icon sun" />
+                  <FaMoon className="icon moon" />
+                </span>
+              </div>
             </div>
           </div>
 
-          <div className="row" style={{padding:'5px'}}>
+          <div className="button-row" style={{padding:'5px'}}>
             <div className="col-md-4">
-              <button className="transition-button">
+              <button 
+                className={`transition-button ${activeButton === 0 ? 'active' : ''}`}
+                onClick={() => handleButtonClick(0)}
+              >
                 <span className="icon">
                   <FaYoutube />
                 </span>
@@ -144,7 +159,8 @@ const SingleProject = () => {
               </button>
             </div>
             <div className="col-md-4">
-              <button className="transition-button">
+              <button className={`transition-button ${activeButton === 1 ? 'active' : ''}`}
+              onClick={() => handleButtonClick(1)}>
                 <span className="icon">
                   <FaInstagram />
                 </span>
@@ -154,7 +170,8 @@ const SingleProject = () => {
               </button>
             </div>
             <div className="col-md-4">
-              <button className="transition-button">
+              <button className={`transition-button ${activeButton === 2 ? 'active' : ''}`}
+              onClick={() => handleButtonClick(2)}>
                 <span className="icon">
                   <FaCube />
                 </span>
@@ -166,7 +183,7 @@ const SingleProject = () => {
           </div>
           <button class="dream-button"><span>Build Your Dream</span></button>        </div>
       </div>
-      <Footer />
+      <Footer className="single-project-footer" />
     </div >
   );
 };

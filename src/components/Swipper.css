@@ -1,8 +1,18 @@
 /* Full-screen swiper styles */
 .swiper {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh; /* Full viewport height */
 }
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .slide {
   background-size: cover; /* Cover entire slide */

@@ -22,6 +22,17 @@
   line-height: 100px;
   text-align: center;
 }
+.hover-button {
+  border: none; /* Remove border */
+  text-decoration: none; /* Remove underline */
+  /* Add any other styles you need for the button */
+}
+
+.hover-button:hover {
+  border: none; /* Ensure border is removed on hover */
+  text-decoration: none; /* Ensure underline is removed on hover */
+  /* Add any other hover styles you need */
+}
 
 iframe {
   transition: transform 1.2s ease-in-out;

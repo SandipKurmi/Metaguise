@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import "./VisionAndMission.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Footer from '../../components/Footer'; 
@@ -14,8 +15,7 @@ import Image7 from '../../assets/Team/sahil.png';
 import Image8 from '../../assets/Team/sumit.png';
 import About1 from '../../assets/about1.png';
 import About2 from '../../assets/about2.png';
-//import Vision from '../../assets/vision.png';
-//import Mision from '../../assets/mision.png';
+import Vision from '../../assets/vision.png';
 
 
 function About() {
@@ -80,7 +80,7 @@ function About() {
             {/* Vision Section */}
             <Col md={6} className="vision-section">
               <div className="vision-container">
-                {/* <img src={Vision} alt="Vision" /> */}
+                <img src={Vision} alt="Vision" />
                 <h1 className="overlay-text-vision">Vision</h1>
               </div>
             </Col>

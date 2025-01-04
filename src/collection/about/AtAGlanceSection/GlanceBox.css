@@ -1,0 +1,106 @@
+/* Glance Box Styling */
+.glance-box {
+
+    background-color: #232323;
+    /* Initial background color */
+    color: #fff;
+    /* Initial text color */
+    border-radius: 33px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 20px;
+    width: 257px;
+    height: 301.26px;
+    overflow: hidden; /* Ensure the pseudo-element is contained within the box */
+    transition: color 0.3s ease; /* Transition for text color */
+    margin-bottom: 20px;
+    position: relative;
+
+}
+
+.glance-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: left 0.4s ease-in-out;
+    z-index: 0;
+    border-radius: 10px; /* Match the border-radius of the box */
+}
+
+
+.glance-box:hover::before {
+    left: 0;
+}
+
+.glance-box:hover {
+    color: #000;
+    /* Text color on hover */
+}
+
+
+
+.glance-box img {
+    transition: filter 0.3s ease;
+    width: 172px;
+    height: 125px;
+    
+    z-index: 1;
+}
+
+.glance-box:hover img {
+    filter: invert(1);
+    /* Invert image colors on hover */
+}
+
+.glance-box .heading {
+    font-family: Degular;
+    position: relative;
+    z-index: 1; /* Ensure the heading is above the pseudo-element */
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 25px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.glance-box .main-heading {
+    font-family: Degular;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 41px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-right: 20px;
+
+}
+
+.glance-box .main-heading .line {
+    display: block;
+}
+
+.tw-grid {
+    display: grid;
+    gap: 10px;
+    column-gap: 10px;
+    /* Adjust this value to increase the gap between boxes */
+}
+
+@media (min-width: 640px) {
+    .tw-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .tw-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

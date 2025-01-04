@@ -1,8 +1,19 @@
-export const GlanceBox = ({heading, icon}) => {
+import React from "react";
+import "./GlanceBox.css";
+
+export const GlanceBox = ({heading, icon, isMainHeading}) => {
   return (
-    <div className='tw-min-w-64 tw-min-h-80 tw-bg-[#232323] tw-rounded-3xl tw-p-8 tw-relative'>
-      <p className={`${icon? "tw-text-2xl":"tw-text-5xl"} tw-text-left`}>
-        {heading}
+    <div className='glance-box'>
+      <p className={`heading ${isMainHeading ? "main-heading" : ""}`}>
+        {isMainHeading ? (
+          <>
+            <span className="line">Metaguise</span>
+            <span className="line">At A</span>
+            <span className="line">Glance</span>
+          </>
+        ) : (
+          heading
+        )}
       </p>
       {icon && (
         <img
@@ -10,7 +21,6 @@ export const GlanceBox = ({heading, icon}) => {
           src={icon}
           alt='about-icon'
         />
-
       )}
     </div>
   );

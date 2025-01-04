@@ -1,0 +1,84 @@
+/* Vision and Mission Section Styling */
+.vision-mission-card {
+    position: relative;
+    background-color: #232323;
+    /* Initial background color */
+    color: #fff;
+    /* Initial text color */
+
+    width: 524px;
+    height: 416px;
+    gap: 0px;
+    border-radius: 33px;
+    opacity: 0px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* 
+.vision-mission-card:hover {
+    background-color: #fff;
+
+    color: #000;
+
+}*/
+ 
+.vision-mission-card::before {
+content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: left 0.4s ease-in-out;
+    z-index: 0;
+    border-radius: 33px; /* Match the border-radius of the card */
+}
+
+.vision-mission-card:hover::before {
+    left: 0;
+}
+
+.vision-mission-card:hover {
+    color: #000; /* Text color on hover */
+}
+
+.vision-mission-card .tw-space-y-6, .vision-mission-card .tw-px-8, .vision-mission-card .tw-pb-8 {
+    position: relative;
+    z-index: 1; /* Ensure the content is above the pseudo-element */
+}
+
+
+.vision-mission-card img {
+    transition: filter 0.3s ease;
+}
+
+.vision-mission-card:hover img {
+    filter: invert(1);
+    
+} 
+
+.vision-mission-card h2 {
+    font-family: Degular;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 50px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.vision-mission-card p {
+    font-family: Degular;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}

@@ -5,7 +5,7 @@ import bookCover from '../assets/cover.png';
 
 const Cofee = () => {
     return (
-        <div className="container">
+        <div className="cofee-container">
             <main className="cofee-content">
                 <div className="cofee-section">
                     <h1>Get our Coffee Table Book.</h1>

@@ -1,3 +1,6 @@
+import menuIcon from './assets/menu-icon.png';  // Adjust the path according to your project structure
+import logo from './assets/logo.png';  // Adjust the path to where your logo image is stored
+
 <>
       <header className="header">
         <div className="header-left">

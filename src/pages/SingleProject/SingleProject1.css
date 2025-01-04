@@ -1,3 +1,6 @@
+
+
+
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -191,6 +194,7 @@
 }
 
 
+
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .image-grid {
@@ -218,4 +222,59 @@
     transform: none;
     transform-origin: center;
   }
+}
+
+
+/* Back Button Styling */
+.back-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #343434;
+  overflow: hidden;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;;
+  font-family: 'Degular Display', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+  margin-top: 0px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+.back-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transition: left 0.4s ease-in-out;
+  z-index: 0;
+  border: none;
+}
+
+.back-button:hover::before {
+  left: 0;
+  border: none;
+}
+.back-button:hover {
+  color: #0e0d0d;
+  background-color: #fff;
+  border: none;
+} 
+
+.back-button span {
+  position: relative;
+  z-index: 1;
+  color: inherit;
+}
+
+.back-button .arrow {
+  font-size: 20px;
+  position: relative;
+  z-index: 1;
+  color: inherit;
 }
