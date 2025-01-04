@@ -27,7 +27,7 @@ function Drawer({ isOpen, toggleDrawer }) {
               <Nav.Link className="text-white" href="/all-projects">
                 Our Projects
               </Nav.Link>
-              <Nav.Link className="text-white" href="/contact">
+              <Nav.Link className="text-white" href="/partner">
                 Partner With Us
               </Nav.Link>
               <Nav.Link className="text-white" href="/contact">

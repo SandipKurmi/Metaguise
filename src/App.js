@@ -11,6 +11,7 @@ import Allprojects from './pages/AllProject/Allprojects';
 import Contact from './pages/Contact/Contact';
 import { About } from './pages/About/About';
 import Metavision from './components/Metavision';
+import Partner from './pages/Partner/Partner';
 
 // import React from 'react';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -34,6 +35,7 @@ function App() {
           <Route path='/all-products' element={<Allproducts />} />
           <Route path='/all-projects' element={<Allprojects />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/partner' element={<Partner />} />
           <Route path='/single-product' element={<SingleProduct />} />
           <Route path='/single-project' element={<SingleProject />} />
           <Route path='/about' element={<About />} />
