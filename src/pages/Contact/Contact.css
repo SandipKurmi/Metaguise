@@ -5,38 +5,38 @@
 /* Container Styles */
 .contact-container {
   min-height: 100vh;
-  padding-top: 80px; /* Adjust this value based on your navbar height */
+  padding-top: 80px;
 }
 
 .contact-row {
-  min-height: calc(100vh - 80px); /* Subtract navbar height */
+  min-height: calc(100vh - 80px);
   padding: 5rem;
 }
 
 /* Contact Text Styles */
 .contactus-text p {
-  font-size: 84px;
+  font-size: clamp(36px, 6vw, 84px);
   font-family: "Degular Display";
   font-weight: 600;
   letter-spacing: 1px;
   text-align: justify;
-  line-height: 55px;
+  line-height: clamp(32px, 4vw, 55px);
   margin: 0;
 }
 
 .lead-contact p {
-  font-size: 24px;
+  font-size: clamp(18px, 2.5vw, 24px);
   font-family: "Degular Display";
   font-weight: 400;
   letter-spacing: 1px;
   text-align: justify;
   margin: 0;
-  line-height: 24px;
+  line-height: clamp(20px, 2.5vw, 24px);
 }
 
 /* Form Styles */
 .form-text {
-  font-size: 18px;
+  font-size: clamp(14px, 1.5vw, 18px);
   font-family: "Degular Display";
   font-weight: 400;
   letter-spacing: 1px;
@@ -65,7 +65,7 @@
   border: none;
   padding: 15px 100px;
   font-family: "Degular Display";
-  font-size: 18px;
+  font-size: clamp(14px, 1.5vw, 18px);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -80,7 +80,7 @@
     padding-left: 0px;
   }
   .contact-container {
-    padding-top: 60px; /* Adjust for smaller navbar on mobile */
+    padding-top: 60px;
   }
 
   .contact-row {
@@ -89,14 +89,14 @@
   }
 
   .contactus-text p {
-    font-size: 48px;
-    line-height: 40px;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: clamp(24px, 3vw, 40px);
     text-align: left;
   }
 
   .lead-contact p {
-    font-size: 20px;
-    line-height: 22px;
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: clamp(18px, 2vw, 22px);
     text-align: left;
   }
 
@@ -105,7 +105,7 @@
   }
 
   .form-text {
-    font-size: 16px;
+    font-size: clamp(12px, 1.5vw, 16px);
   }
 
   .send-button {
@@ -115,18 +115,5 @@
 
   .button-wrapper {
     padding: 0;
-  }
-}
-
-/* Additional responsive adjustments */
-@media (max-width: 576px) {
-  .contactus-text p {
-    font-size: 36px;
-    line-height: 32px;
-  }
-
-  .lead-contact p {
-    font-size: 18px;
-    line-height: 20px;
   }
 }

@@ -5,42 +5,42 @@
 /* Container Styles */
 .contact-container {
   min-height: 100vh;
-  padding-top: 80px; /* Adjust this value based on your navbar height */
+  padding-top: clamp(60px, 8vh, 80px);
 }
 
 .contact-row {
-  min-height: calc(100vh - 80px); /* Subtract navbar height */
-  padding: 5rem;
+  min-height: calc(100vh - clamp(60px, 8vh, 80px));
+  padding: clamp(1rem, 3vw, 5rem);
 }
 
 /* Contact Text Styles */
 .contactus-text p {
-  font-size: 84px;
+  font-size: clamp(2.25rem, 5vw, 5.25rem); /* 36px to 84px */
   font-family: "Degular Display";
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: clamp(0.5px, 0.1vw, 1px);
   text-align: justify;
-  line-height: 55px;
+  line-height: clamp(2rem, 4vw, 3.4375rem); /* 32px to 55px */
   margin: 0;
 }
 
 .lead-contact p {
-  font-size: 24px;
+  font-size: clamp(1.125rem, 2vw, 1.5rem); /* 18px to 24px */
   font-family: "Degular Display";
   font-weight: 400;
-  letter-spacing: 1px;
+  letter-spacing: clamp(0.5px, 0.1vw, 1px);
   text-align: justify;
   margin: 0;
-  line-height: 24px;
+  line-height: clamp(1.25rem, 2vw, 1.5rem); /* 20px to 24px */
 }
 
 /* Form Styles */
 .form-text {
-  font-size: 18px;
+  font-size: clamp(1rem, 1.5vw, 1.125rem); /* 16px to 18px */
   font-family: "Degular Display";
   font-weight: 400;
   letter-spacing: 1px;
-  padding: 12px;
+  padding: clamp(0.75rem, 2vw, 1rem);
   border-radius: 0;
   background-color: rgb(45, 45, 45);
   color: #fff;
@@ -56,16 +56,16 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: clamp(1rem, 2vw, 1.5rem);
 }
 
 .send-button {
   background-color: #fff;
   color: #000;
   border: none;
-  padding: 15px 100px;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 8vw, 6.25rem); /* 12px to 16px padding-y, 20px to 100px padding-x */
   font-family: "Degular Display";
-  font-size: 18px;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -79,38 +79,18 @@
   .flex-column {
     padding-left: 0px;
   }
-  .contact-container {
-    padding-top: 60px; /* Adjust for smaller navbar on mobile */
-  }
-
-  .contact-row {
-    min-height: calc(100vh - 60px);
-    padding: 1rem;
-  }
-
-  .contactus-text p {
-    font-size: 48px;
-    line-height: 40px;
-    text-align: left;
-  }
-
-  .lead-contact p {
-    font-size: 20px;
-    line-height: 22px;
-    text-align: left;
-  }
 
   .contact-left {
     margin-bottom: 2rem;
   }
 
-  .form-text {
-    font-size: 16px;
+  .contactus-text p,
+  .lead-contact p {
+    text-align: left;
   }
 
   .send-button {
     width: 100%;
-    padding: 12px 20px;
   }
 
   .button-wrapper {
@@ -118,15 +98,15 @@
   }
 }
 
-/* Additional responsive adjustments */
-@media (max-width: 576px) {
+/* Additional responsive adjustments for very small screens */
+@media (max-width: 350px) {
   .contactus-text p {
-    font-size: 36px;
-    line-height: 32px;
+    font-size: 2rem; /* 32px minimum */
+    line-height: 1.2;
   }
 
   .lead-contact p {
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 1rem; /* 16px minimum */
+    line-height: 1.3;
   }
 }
