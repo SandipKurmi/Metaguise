@@ -1,6 +1,4 @@
 import { AboutHeroSection } from "../../collection";
-import VisionIcon from "../../assets/about/vision.png";
-import MissionIcon from "../../assets/about/mission.png";
 import { VisionAndMission } from "../../collection/about/VisionAndMission/VisionAndMission";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,44 +9,13 @@ import { ReverseHeroSection } from "../../collection/about/ReverseHeroSection/Re
 
 gsap.registerPlugin(ScrollTrigger);
 
-const visions = [
-  {
-    id: 1,
-    icon: VisionIcon,
-    title: "Vision",
-    description1: `DRV (Shri Deepak Raheja’s Vision) serves as the foundation for all
-          meta organizations, inspired by the life lessons imparted by our
-          founding father.`,
-    description2: `This vision emphasizes the mindset that "Anything is Possible" when
-          combined with an unbreakable will, unwavering standards, boundless
-          energy, incorruptible morals, and an unstoppable aura.`,
-  },
-  {
-    id: 2,
-    icon: MissionIcon,
-    title: "Mission",
-    description1: `DRV (Shri Deepak Raheja’s Vision) is the bloodline of all meta organizations, based on the life lessons taught by our founding father specifically focusing on a mindset “Anything is Possible”.`,
-    description2: `Where the will is unbreakable, standards un-challengeable, energy in-exhaustible, morals un-corruptable and the aura unstoppable.`,
-  },
-];
-
 export const About = () => {
   return (
     <>
       <div>
         <AboutHeroSection />
 
-        <div className="tw-grid tw-grid-cols-2 tw-gap-4 tw-container tw-mx-auto">
-          {visions.map((vision) => (
-            <VisionAndMission
-              key={vision.id}
-              title={vision.title}
-              icon={vision.icon}
-              description1={vision.description1}
-              description2={vision.description2}
-            />
-          ))}
-        </div>
+        <VisionAndMission />
 
         <div className="tw-container tw-mx-auto tw-px-4 tw-my-20 md:tw-my-14">
           <div
@@ -75,15 +42,15 @@ export const About = () => {
           <ReverseHeroSection />
         </div>
 
-        <div className="tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-items-center tw-mb-12">
+        {/* <div className="tw-container tw-mx-auto tw-flex tw-flex-col tw-justify-center tw-items-center tw-mb-12">
           <h1 className="font tw-tracking-wide tw-leading-[50px] tw-text-[64px] tw-text-center ">
             Meet The Team
           </h1>
-          {/* <MeetTeam /> */}
+          <MeetTeam />
           <button className="hover-button" aria-label="See all projects">
             <span>See All Projects</span>
           </button>
-        </div>
+        </div> */}
       </div>
       <Footer />
     </>

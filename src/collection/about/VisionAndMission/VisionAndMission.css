@@ -1,16 +1,45 @@
 /* Vision and Mission Section Styling */
+.vision-mission-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.vision-mission-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
 .vision-mission-card {
-  position: relative;
-  background-color: #232323;
-  color: #fff;
-  width: 524px;
-  height: 416px;
-  gap: 0px;
+  background: #232323;
   border-radius: 33px;
-  opacity: 0px;
-  margin-bottom: 50px;
+  padding: 2rem;
+  color: white;
+  position: relative;
   overflow: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
+  width: 45%;
+  min-height: 416px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .vision-mission-card {
+    width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .vision-mission-card {
+    width: 100%;
+    min-height: 350px;
+    padding: 1.5rem;
+  }
 }
 
 .vision-mission-card::before {
@@ -20,10 +49,10 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background: white;
   transition: left 0.4s ease-in-out;
   z-index: 0;
-  border-radius: 33px; /* Match the border-radius of the card */
+  border-radius: 33px;
 }
 
 .vision-mission-card:hover::before {
@@ -31,42 +60,75 @@
 }
 
 .vision-mission-card:hover {
-  color: #000; /* Text color on hover */
+  color: black;
 }
 
-.vision-mission-card .tw-space-y-6,
-.vision-mission-card .tw-px-8,
-.vision-mission-card .tw-pb-8 {
-  position: relative;
-  z-index: 1; /* Ensure the content is above the pseudo-element */
-}
-
-.vision-mission-card img {
+.vision-mission-card .card-icon {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  object-fit: cover;
   transition: filter 0.3s ease;
+  z-index: 1;
 }
 
-.vision-mission-card:hover img {
-  filter: invert(1);
+@media (max-width: 768px) {
+  .vision-mission-card .card-icon {
+    right: 1.5rem;
+  }
 }
 
-.vision-mission-card h2 {
+.vision-mission-card:hover .card-icon {
+  filter: brightness(0);
+}
+
+.vision-mission-card .card-content {
+  position: relative;
+  z-index: 1;
+  margin-top: 5rem;
+  width: 100%;
+  text-align: left;
+}
+
+.vision-mission-card .title {
   font-family: Degular;
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 500;
-  line-height: 50px;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
   letter-spacing: -0.02em;
   text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
 }
 
-.vision-mission-card p {
-  font-family: Degular;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 21px;
+@media (max-width: 1024px) {
+  .vision-mission-card .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .vision-mission-card .title {
+    font-size: 2rem;
+  }
+}
+
+.vision-mission-card .description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.vision-mission-card .description p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
   letter-spacing: -0.02em;
   text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
+}
+
+@media (max-width: 768px) {
+  .vision-mission-card .description p {
+    font-size: 0.875rem;
+  }
 }
