@@ -1,0 +1,24 @@
+.hover-button {
+  background: #232323;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.hover-button:hover {
+  background: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .hover-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .hover-button {
+    width: auto;
+  }
+}
