@@ -1,71 +1,178 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.app-container {
-  background-color: #000;
-  min-height: 100vh;
+/* src/components/Gallery.css */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   padding: 20px;
-}
-
-.gallery-project{
-  max-height: 56vh; /* Limit height to make scrolling visible */
-  overflow-y: scroll; /* Enable vertical scrolling */
+  max-height: calc(100vh - 40vh);
+  overflow-y: auto;
   overflow-x: hidden;
-  margin-bottom: 50px;
-}
-.gallery-project img {
-  transition: transform 0.3s ease;
-  width: 100%;
-  height: auto;
 }
 
-.gallery-project img:hover {
-  transform: scale(1.05);
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+    max-height: calc(100vh - 180px);
+  }
+
+  .sidebar {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+.gallery::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 10px;
+}
+
+.gallery::-webkit-scrollbar-track {
+  background-color: #171515;
+}
+
+.gallery-container {
+  margin-top: 15vh;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-content {
+  flex: 1;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 10px;
+}
+
+.hover-effect {
+  position: relative;
+  display: block;
+  transition: 0.3s ease-in-out;
+}
+
+.hover-effect:hover {
+  filter: brightness(0.5);
+  transition: 0.4s ease-in-out;
 }
 
 .sidebar {
-  background-color: #171515; 
-  padding: 20px;
+  background-color: #171515;
   border-radius: 20px;
   color: #fff;
+  padding: 15px;
 }
 
 .highlight {
-  background-color: #000000; /* Change to your desired highlight color */
-  color: #f8f4f4; /* Text color for highlighted item */
+  background-color: #000000;
+  color: #f8f4f4;
 }
 
 .dim {
-  opacity: 0.5; /* Dimmed effect for non-selected items */
+  opacity: 0.5;
 }
 
-.sidebar h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.sidebar .project-type p {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.sidebar .project-type button {
-  width: 80%;
-}
-
-.sidebar .build-button button {
-  width: 100%;
-}
-.text1{
-  font-size: 18px;
-  font-family: Degular Display;
+.list-group-item {
+  background-color: #161616 !important;
+  color: #fff;
   border: none;
   text-transform: capitalize !important;
+  font-size: 14px;
+  padding: 10px 15px;
+  margin-bottom: 5px;
 }
 
-.all-projects-footer{
+.list-group {
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.dream-button {
+  background-color: #343434;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.dream-button:hover {
+  background-color: #454545;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  padding: 5px 10px;
+  font-size: 21px;
+  border-radius: 4px;
+  display: none;
+  width: 90%;
+  text-align: left;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+
+.gallery-item:hover .image-text {
+  display: block;
+}
+
+/* For Webkit Browsers (Chrome, Safari, Edge) */
+
+/* Main scrollbar track (background) */
+::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+/* The scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #3d3d3d !important;
+  border-radius: 6px !important;
+}
+
+/* On hover, change thumb color */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555 !important;
+}
+
+/* The scrollbar track (background area) */
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+/* footer ----*/
+.all-product-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-product-content {
+  flex: 1;
+}
+
+.product-footer {
   position: fixed;
   bottom: 0;
   left: 0;

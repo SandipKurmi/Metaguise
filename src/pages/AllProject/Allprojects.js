@@ -1,11 +1,12 @@
+// src/components/Gallery.js
 import React, { useState, useEffect } from "react";
-import "./Allprojects.css";
+import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import Footer from "../../components/Footer";
-import { useNavigate } from "react-router-dom";
+import "./Allprojects.css";
 
-function Allprojects() {
+const Allprojects = () => {
   const images = [
     { imgPath: "assets/Allprojects/commercial/Ardete/cover/ardete5.jpg" },
     { imgPath: "assets/Allprojects/commercial/Tanishq/cover/tanishq11.jpg" },
@@ -518,74 +519,72 @@ function Allprojects() {
   }, [location]);
 
   return (
-    <Container
-      className="app-container text-white"
-      style={{ marginTop: "100px" }}
-    >
-      <Row>
-        <Col md={9} className="gallery-project">
+    <div className="gallery-container">
+      <div className="gallery-content">
+        <Container>
           <Row>
-            {filteredImages.map((img, index) => (
-              <Col
-                key={index}
-                sm={12}
-                md={6}
-                lg={4}
-                onClick={() => projectClickHandler(img)}
-                style={{ padding: "7px" }}
-              >
-                <img
-                  src={`${process.env.PUBLIC_URL}/${img.imgPath}`}
-                  alt={`Gallery ${index}`}
-                  className="img-fluid"
-                />
-              </Col>
-            ))}
+            <Col lg={9} md={8}>
+              <div className="gallery">
+                {filteredImages.map((img, index) => (
+                  <div
+                    key={index}
+                    className="gallery-item"
+                    onClick={() => projectClickHandler(img)}
+                  >
+                    <div className="hover-effect">
+                      <img
+                        src={`${process.env.PUBLIC_URL}/${img.imgPath}`}
+                        alt={`Gallery ${index}`}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Col>
+            <Col lg={3} md={4} className="mb-4">
+              <div className="sidebar">
+                <h2>Our Projects</h2>
+                <ListGroup variant="flush">
+                  <ListGroup.Item
+                    action
+                    variant="dark"
+                    className={selectedCategory === "" ? "highlight" : "dim"}
+                    onClick={() => filterImagesByCategory("")}
+                  >
+                    All
+                  </ListGroup.Item>
+                  <ListGroup.Item
+                    action
+                    variant="dark"
+                    className={
+                      selectedCategory === "residential" ? "highlight" : "dim"
+                    }
+                    onClick={() => filterImagesByCategory("residential")}
+                  >
+                    Residential
+                  </ListGroup.Item>
+                  <ListGroup.Item
+                    action
+                    variant="dark"
+                    className={
+                      selectedCategory === "commercial" ? "highlight" : "dim"
+                    }
+                    onClick={() => filterImagesByCategory("commercial")}
+                  >
+                    Commercial
+                  </ListGroup.Item>
+                </ListGroup>
+              </div>
+              <button className="dream-button">
+                <span>Build Your Dream</span>
+              </button>
+            </Col>
           </Row>
-        </Col>
-        <Col md={3} className="sidebar-section">
-          <h2 className="text-justify">Our Projects</h2>
-          <div className="sidebar p-4">
-            <ListGroup variant="flush">
-              {/* <ListGroup.Item action variant="dark" style={{color: "#fff"}}>Section</ListGroup.Item> */}
-              <ListGroup.Item
-                action
-                variant="dark"
-                className={selectedCategory === "" ? "highlight" : "dim"}
-                onClick={() => filterImagesByCategory("")}
-              >
-                All
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                variant="dark"
-                className={
-                  selectedCategory === "residential" ? "highlight" : "dim"
-                }
-                onClick={() => filterImagesByCategory("residential")}
-              >
-                residential
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                variant="dark"
-                className={
-                  selectedCategory === "commercial" ? "highlight" : "dim"
-                }
-                onClick={() => filterImagesByCategory("commercial")}
-              >
-                commercial
-              </ListGroup.Item>
-            </ListGroup>
-          </div>
-          <button className="dream-button">
-            <span>Build Your Dream</span>
-          </button>
-        </Col>
-      </Row>
-      <Footer className="all-projects-footer" />
-    </Container>
+        </Container>
+      </div>
+      <Footer className="product-footer" />
+    </div>
   );
-}
+};
 
 export default Allprojects;
