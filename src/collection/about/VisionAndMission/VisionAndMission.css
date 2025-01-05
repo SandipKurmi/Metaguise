@@ -1,4 +1,4 @@
-/* Vision and Mission Section Styling */
+/* Common styles */
 .vision-mission-container {
   width: 100%;
   max-width: 1440px;
@@ -6,6 +6,7 @@
   padding: 2rem 1rem;
 }
 
+/* Desktop Layout */
 .vision-mission-grid {
   display: flex;
   flex-wrap: wrap;
@@ -13,6 +14,7 @@
   justify-content: center;
 }
 
+/* Card Styles */
 .vision-mission-card {
   background: #232323;
   border-radius: 33px;
@@ -26,20 +28,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-@media (max-width: 1024px) {
-  .vision-mission-card {
-    width: 48%;
-  }
-}
-
-@media (max-width: 768px) {
-  .vision-mission-card {
-    width: 100%;
-    min-height: 350px;
-    padding: 1.5rem;
-  }
 }
 
 .vision-mission-card::before {
@@ -72,12 +60,6 @@
   z-index: 1;
 }
 
-@media (max-width: 768px) {
-  .vision-mission-card .card-icon {
-    right: 1.5rem;
-  }
-}
-
 .vision-mission-card:hover .card-icon {
   filter: brightness(0);
 }
@@ -100,18 +82,6 @@
   text-align: left;
 }
 
-@media (max-width: 1024px) {
-  .vision-mission-card .title {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .vision-mission-card .title {
-    font-size: 2rem;
-  }
-}
-
 .vision-mission-card .description {
   display: flex;
   flex-direction: column;
@@ -127,8 +97,83 @@
   text-align: left;
 }
 
+/* Mobile Layout (768px and below) */
 @media (max-width: 768px) {
+  .vision-mission-container {
+    padding: 1rem 0.5rem;
+  }
+
+  /* Mobile Slider */
+  .mobile-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 0.5rem 0.5rem;
+    margin: 0 -0.5rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .mobile-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-slide {
+    flex: 0 0 auto;
+    width: 70%; /* 1.5 items on smaller screens */
+    scroll-snap-align: center;
+  }
+
+  /* Slider Dots */
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .slider-dot.active {
+    background-color: #fff;
+  }
+
+  /* Mobile Card Adjustments */
+  .vision-mission-card {
+    width: 100%;
+    min-height: 350px;
+    padding: 1.5rem;
+  }
+
+  .vision-mission-card .card-icon {
+    right: 1.5rem;
+  }
+
+  .vision-mission-card .title {
+    font-size: 2rem;
+  }
+
   .vision-mission-card .description p {
     font-size: 0.875rem;
+  }
+}
+
+/* Medium screens (640px to 768px) */
+@media (min-width: 640px) and (max-width: 768px) {
+  .mobile-slide {
+    width: 50%; /* 2 items per view */
   }
 }
