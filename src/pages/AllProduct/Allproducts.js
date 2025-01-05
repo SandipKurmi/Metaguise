@@ -479,90 +479,92 @@ const Allproducts = () => {
       document.body.style.overflowY = "auto";
     };
   }, [location]);
+
   return (
-    <Container
-      className="app-container text-white"
-      style={{ marginTop: "100px" }}
-    >
-      <Row>
-        <Col md={9} className="gallery">
-          {filteredImages.map((img, index) => (
-            <div
-              key={index}
-              className="gallery-item"
-              onClick={() => productClickHandler(index)}
-            >
-              <img
-                className="hover-effect"
-                src={`${process.env.PUBLIC_URL}/${img.imgPath}`}
-                alt={`Gallery ${index}`}
-              />
-              <div className="image-text">{img.imgText}</div>
-            </div>
-          ))}
-        </Col>
-        <Col md={3} className="sidebar-section">
-          <h3>Our Products</h3>
-          <div className="sidebar p-4">
-            <ListGroup variant="flush">
-              {/* <ListGroup.Item action variant="dark" style={{color: "#fff"}}>Section</ListGroup.Item> */}
-              <ListGroup.Item
-                action
-                variant="dark"
-                className={selectedCategory === "" ? "highlight" : "dim"}
-                onClick={() => filterImagesByCategory("")}
-              >
-                All
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                variant="dark"
-                className={
-                  selectedCategory === "MetaParametric" ? "highlight" : "dim"
-                }
-                onClick={() => filterImagesByCategory("MetaParametric")}
-              >
-                MetaParametric
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                variant="dark"
-                className={
-                  selectedCategory === "MetaForm" ? "highlight" : "dim"
-                }
-                onClick={() => filterImagesByCategory("MetaForm")}
-              >
-                MetaForm
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                variant="dark"
-                className={
-                  selectedCategory === "MetaFunction" ? "highlight" : "dim"
-                }
-                onClick={() => filterImagesByCategory("MetaFunction")}
-              >
-                MetaFunction
-              </ListGroup.Item>
-              <ListGroup.Item
-                action
-                variant="dark"
-                className={
-                  selectedCategory === "MetaSurface" ? "highlight" : "dim"
-                }
-                onClick={() => filterImagesByCategory("MetaSurface")}
-              >
-                MetaSurfaces
-              </ListGroup.Item>
-            </ListGroup>
-          </div>
-          <button className="dream-button">
-            <span>Build Your Dream</span>
-          </button>
-        </Col>
-      </Row>
-      <Footer className="product-footer" />
-    </Container>
+    <div className="gallery-container">
+      <div className="gallery-content">
+        <Container fluid>
+          <Row>
+            <Col md={9}>
+              <div className="gallery">
+                {filteredImages.map((img, index) => (
+                  <div
+                    key={index}
+                    className="gallery-item"
+                    onClick={() => productClickHandler(index)}
+                  >
+                    <div className="hover-effect">
+                      <img
+                        src={`${process.env.PUBLIC_URL}/${img.imgPath}`}
+                        alt={img.imgText}
+                        loading="lazy"
+                      />
+                      <div className="image-text">{img.imgText}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Col>
+            <Col md={3} className="mb-3">
+              <div className="sidebar">
+                <h4 className="mb-3">Sections</h4>
+                <ListGroup>
+                  <ListGroup.Item
+                    action
+                    onClick={() => filterImagesByCategory("")}
+                    className={selectedCategory === "" ? "highlight" : "dim"}
+                  >
+                    All
+                  </ListGroup.Item>
+                  <ListGroup.Item
+                    action
+                    onClick={() => filterImagesByCategory("MetaParametric")}
+                    className={
+                      selectedCategory === "MetaParametric"
+                        ? "highlight"
+                        : "dim"
+                    }
+                  >
+                    MetaParametric
+                  </ListGroup.Item>
+                  <ListGroup.Item
+                    action
+                    onClick={() => filterImagesByCategory("MetaForm")}
+                    className={
+                      selectedCategory === "MetaForm" ? "highlight" : "dim"
+                    }
+                  >
+                    MetaForm
+                  </ListGroup.Item>
+                  <ListGroup.Item
+                    action
+                    onClick={() => filterImagesByCategory("MetaFunction")}
+                    className={
+                      selectedCategory === "MetaFunction" ? "highlight" : "dim"
+                    }
+                  >
+                    MetaFunction
+                  </ListGroup.Item>
+                  <ListGroup.Item
+                    action
+                    onClick={() => filterImagesByCategory("MetaSurface")}
+                    className={
+                      selectedCategory === "MetaSurface" ? "highlight" : "dim"
+                    }
+                  >
+                    MetaSurfaces
+                  </ListGroup.Item>
+                </ListGroup>
+                <button className="dream-button">
+                  <span>Build Your Dream</span>
+                </button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <Footer />
+    </div>
   );
 };
 

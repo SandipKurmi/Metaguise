@@ -2,15 +2,29 @@
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding-top: 5px;
-  max-height: 55vh; /* Limit height to make scrolling visible */
-  overflow-y: scroll; /* Enable vertical scrolling */
+  gap: 20px;
+  padding: 20px;
+  max-height: calc(100vh - 40vh);
+  overflow-y: auto;
   overflow-x: hidden;
-  margin-bottom: 15px;
 }
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+    max-height: calc(100vh - 180px);
+  }
+
+  .sidebar {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+}
+
 .gallery::-webkit-scrollbar {
-  width: 6px; /* Scrollbar width for Webkit browsers */
+  width: 6px;
 }
 
 .gallery::-webkit-scrollbar-thumb {
@@ -22,16 +36,21 @@
   background-color: #171515;
 }
 
-body,
-html {
-  height: 100%;
-  margin: 0;
+.gallery-container {
+  margin-top: 15vh;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
 }
 
+.gallery-content {
+  flex: 1;
+}
 
 .gallery-item {
   position: relative;
-  /* Ensure the text is positioned relative to the image */
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .gallery-item img {
@@ -42,37 +61,31 @@ html {
   border-radius: 10px;
 }
 
-/* .gallery-item:hover img {
-  transform: scale(1.1);
-} */
-/* ----------------------------------------- */
 .hover-effect {
   position: relative;
   display: block;
-  transition: 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .hover-effect:hover {
-  filter: brightness(0.5); /* Darkens the image */
-  transition: 0.4s ease-in-out; /* Ensure smooth effect */
+  filter: brightness(0.5);
+  transition: 0.4s ease-in-out;
 }
 
-/* --------------------------------------------------------- */
-
-/* src/App.css */
 .sidebar {
   background-color: #171515;
   border-radius: 20px;
   color: #fff;
+  padding: 15px;
 }
 
 .highlight {
-  background-color: #000000; /* Change to your desired highlight color */
-  color: #f8f4f4; /* Text color for highlighted item */
+  background-color: #000000;
+  color: #f8f4f4;
 }
 
 .dim {
-  opacity: 0.5; /* Dimmed effect for non-selected items */
+  opacity: 0.5;
 }
 
 .list-group-item {
@@ -81,15 +94,8 @@ html {
   border: none;
   text-transform: capitalize !important;
   font-size: 14px;
-  padding: 5px;
-}
-.list-group-item-dark:hover {
-  color: #fff; /* Keep the same color as default */
-}
-
-.list-group-item-dark:focus,
-.list-group-item-dark:active {
-  color: #fff;
+  padding: 10px 15px;
+  margin-bottom: 5px;
 }
 
 .list-group {
@@ -99,47 +105,20 @@ html {
 
 .dream-button {
   background-color: #343434;
-  border: none;
-  display: inline-block;
-  font-family: Degular Display, sans-serif;
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-top: 10px;
-  overflow: hidden;
-  padding: 10px;
-  position: relative;
-  transition: color 0.4s ease-in-out;
-  width: 100%;
   color: #fff;
-  font-weight: 900;
-}
-/* Button Hover Effect */
-.dream-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
   width: 100%;
-  height: 100%;
-  background-color: white;
-  transition: left 0.4s ease-in-out;
-  z-index: 0;
-}
-
-.dream-button:hover::before {
-  left: 0;
+  margin-top: 15px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .dream-button:hover {
-  color: #343434;
+  background-color: #454545;
 }
 
-.dream-button span {
-  position: relative;
-  z-index: 1;
-}
-
-/* Hover Text Container */
 .image-text {
   position: absolute;
   bottom: 10px;
@@ -148,18 +127,13 @@ html {
   padding: 5px 10px;
   font-size: 21px;
   border-radius: 4px;
-  /* Rounded corners for the text box */
   display: none;
-  /* Initially hide text */
   width: 90%;
-  /* Make the text container responsive */
   text-align: left;
-  /* Align text to the left */
   text-transform: capitalize;
   font-weight: 900;
 }
 
-/* Show text when hovering over the gallery item */
 .gallery-item:hover .image-text {
   display: block;
 }
@@ -168,13 +142,13 @@ html {
 
 /* Main scrollbar track (background) */
 ::-webkit-scrollbar {
-  width: 6px !important; /* Thin scrollbar width */
+  width: 6px !important;
 }
 
 /* The scrollbar thumb (the draggable part) */
 ::-webkit-scrollbar-thumb {
-  background-color: #3d3d3d !important; /* Dark color for the thumb */
-  border-radius: 6px !important; /* Rounded edges */
+  background-color: #3d3d3d !important;
+  border-radius: 6px !important;
 }
 
 /* On hover, change thumb color */
@@ -184,7 +158,7 @@ html {
 
 /* The scrollbar track (background area) */
 ::-webkit-scrollbar-track {
-  background: transparent !important; /* Make the track transparent */
+  background: transparent !important;
 }
 
 /* footer ----*/
@@ -196,7 +170,6 @@ html {
 
 .all-product-content {
   flex: 1;
-   /* Enable vertical scrolling */
 }
 
 .product-footer {
@@ -209,5 +182,4 @@ html {
   color: #fff;
   padding: 10px 0;
   z-index: 1000;
-
 }
