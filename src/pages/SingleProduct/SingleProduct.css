@@ -131,6 +131,22 @@
   }
 }
 
+/* Media queries for small screens */
+@media screen and (max-width: 768px) {
+  .col-md-4 {
+    margin-bottom: 15px;
+  }
+  
+  .transition-button {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .sidebar-section {
+    margin-top: 20px;
+  }
+}
+
 /* Back Button Styling */
 .back-button {
   position: relative;
