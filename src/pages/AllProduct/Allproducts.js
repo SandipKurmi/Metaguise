@@ -556,12 +556,12 @@ const Allproducts = () => {
               </ListGroup.Item>
             </ListGroup>
           </div>
-          <button class="dream-button">
+          <button className="dream-button">
             <span>Build Your Dream</span>
           </button>
         </Col>
       </Row>
-      <Footer  className= 'product-footer' />
+      <Footer className="product-footer" />
     </Container>
   );
 };

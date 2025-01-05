@@ -1,13 +1,11 @@
 .content {
-  max-width:100%;
- 
+  max-width: 100%;
 }
 
 .scroll-text {
   font-size: 64px;
   font-weight: bold;
   letter-spacing: 5px;
-
 }
 
 .scroll-letter {
@@ -42,15 +40,14 @@
 .carousel-control-prev-icon,
 .carousel-control-next-icon:hover {
   background-color: none !important;
-
 }
-h1{
+h1 {
   color: white;
   margin-bottom: 30px;
   color: white;
   font-size: 128px;
   margin-bottom: 30px;
-  font-family: 'Degular Display';
+  font-family: "Degular Display";
   font-weight: bold;
 }
 
@@ -130,34 +127,27 @@ h1 span:nth-child(9) { animation-delay: 0.8s; }
 .mission-section {
   padding: 0;
 }
-.mission-vision-section{
-  margin-Top: 50px;
+.mission-vision-section {
+  margin-top: 50px;
 }
-
 
 /* Add responsiveness */
 @media (max-width: 524px) {
-
   .vision-section,
   .mission-section {
     height: 50vh;
   }
-
 }
-.vision-section{
-  background-image: url('../../assets/vision.png');
+.vision-section {
+  background-image: url("../../assets/vision.png");
   height: 100vh;
   background-repeat: no-repeat;
 }
-.mission-section{
-  background-image: url('../../assets/mision.png');
+.mission-section {
+  background-image: url("../../assets/mision.png");
   height: 100vh;
   background-repeat: no-repeat;
 }
-
-
-
-
 
 /* Main content styling */
 /* main {
@@ -186,7 +176,6 @@ h1 span:nth-child(9) { animation-delay: 0.8s; }
   0% {
     opacity: 0;
     color: grey;
-   
   }
   100% {
     opacity: 1;
@@ -194,7 +183,6 @@ h1 span:nth-child(9) { animation-delay: 0.8s; }
   }
 }
 
-button:hover{
+button:hover {
   background-color: transparent;
 }
-

@@ -1,6 +1,3 @@
-
-
-
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -63,7 +60,6 @@
   transform-origin: center bottom; /* Scale upwards */
 }
 
-
 .transition-button {
   align-items: center;
   background-color: #171515;
@@ -79,14 +75,14 @@
   overflow: hidden;
   padding: 10px 20px;
   position: relative;
-  transition: width .3s ease, color .3s ease, background-color .3s ease;
+  transition: width 0.3s ease, color 0.3s ease, background-color 0.3s ease;
   width: 80px;
 }
 
 .transition-button .icon {
   color: #fff;
   font-size: 21px;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 
 .transition-button .text {
@@ -95,7 +91,7 @@
   left: -100%;
   opacity: 0;
   position: absolute;
-  transition: left .3s ease, opacity .3s ease;
+  transition: left 0.3s ease, opacity 0.3s ease;
   line-height: 10px;
 }
 
@@ -106,7 +102,7 @@
   left: -100%;
   position: absolute;
   top: 0;
-  transition: left .3s ease;
+  transition: left 0.3s ease;
   width: 100%;
   z-index: 0;
 }
@@ -133,7 +129,7 @@
 }
 /* Light Mode */
 .light-mode {
-  background-color:#171515; /* White background */
+  background-color: #171515; /* White background */
   color: #000000; /* Black text */
   display: flex;
   flex-direction: column;
@@ -193,8 +189,6 @@
   color: #fff; /* White icon in dark mode */
 }
 
-
-
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .image-grid {
@@ -224,7 +218,6 @@
   }
 }
 
-
 /* Back Button Styling */
 .back-button {
   position: relative;
@@ -234,8 +227,8 @@
   color: #fff;
   background-color: #343434;
   overflow: hidden;
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;;
-  font-family: 'Degular Display', sans-serif;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  font-family: "Degular Display", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
   border: none;
@@ -244,7 +237,7 @@
   margin-bottom: 10px;
 }
 .back-button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -264,7 +257,7 @@
   color: #0e0d0d;
   background-color: #fff;
   border: none;
-} 
+}
 
 .back-button span {
   position: relative;

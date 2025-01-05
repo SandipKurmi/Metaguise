@@ -39,11 +39,6 @@ function About() {
             </span>
           ))}
         </h1>
-        {/* </main> */}
-
-        {/* <h1 class="animated-text">
-          <span>M</span><span>e</span><span>t</span><span>a</span><span>g</span><span>u</span><span>i</span><span>s</span><span>e</span>
-        </h1> */}
 
         {/* Image top to bottom */}
         <section className="scroll-section">
