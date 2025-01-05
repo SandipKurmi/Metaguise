@@ -177,7 +177,7 @@ const SingleProject = () => {
               </div>
             </div>
           </div>
-          <div className="button-row" style={{ padding: "5px" }}>
+          <div className="button-row " style={{ padding: "5px" }}>
             <div className="col-md-4">
               <button
                 className={`transition-button ${

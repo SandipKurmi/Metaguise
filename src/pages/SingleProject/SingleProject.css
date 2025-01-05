@@ -147,6 +147,22 @@
 .button-row {
   display: flex;
   gap: 10px; /* Add some space between buttons */
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.button-row .col-md-4 {
+  flex: 1;
+  display: flex;
+}
+
+.transition-button {
+  width: 100%;
+  min-width: 80px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-row .transition-button {
@@ -157,6 +173,7 @@
 .button-row .transition-button.active {
   flex-grow: 2; /* Increase size on click */
 }
+
 /* Light Mode */
 .light-mode {
   background-color: #0e0e0e; /* Light background */
@@ -275,6 +292,7 @@
   width: 100%;
   padding: 0 10px; /* Adds padding inside */
 }
+
 .improved-design {
   font-family: "Degular Display", sans-serif;
   font-weight: bold;
@@ -444,6 +462,94 @@
     left: -5%;
     transform: none;
     transform-origin: center;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile */
+    gap: 10px;
+    padding-right: 10px; /* Add some spacing from the sidebar */
+  }
+
+  .col-9 {
+    width: 100%;
+    padding-right: 15px;
+  }
+
+  .col-md-3.sidebar-section {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Adjust active state scaling for 2-column layout */
+  .grid-item.active:not(.last-row) .grid-image {
+    width: 150%;
+    height: 155%;
+  }
+
+  /* Adjust for first column */
+  .grid-item:nth-child(2n-1).active .grid-image {
+    left: 0;
+    transform-origin: left center;
+  }
+
+  /* Adjust for second column */
+  .grid-item:nth-child(2n).active .grid-image {
+    right: 0;
+    transform-origin: right center;
+  }
+
+  /* Adjust last row items */
+  .grid-item.last-row.active .grid-image {
+    width: 150%;
+    height: 155%;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 15px; /* Increased gap between buttons */
+    width: 100%;
+    padding: 15px 0; /* Increased padding top and bottom */
+  }
+
+  .button-row .col-md-4 {
+    width: 100%;
+    margin: 5px 0; /* Added margin for additional spacing */
+  }
+
+  .transition-button {
+    width: 100%;
+    margin: 0;
+    height: 55px; /* Slightly increased height */
+    border-radius: 12px; /* Slightly rounded corners */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-grid {
+    gap: 8px;
+    padding-right: 8px;
+  }
+
+  .grid-item.active:not(.last-row) .grid-image,
+  .grid-item.last-row.active .grid-image {
+    width: 140%;
+    height: 145%;
+  }
+
+  .button-row {
+    gap: 12px; /* Slightly reduced gap for very small screens */
+    padding: 12px 0;
+  }
+
+  .button-row .col-md-4 {
+    margin: 3px 0;
+  }
+
+  .transition-button {
+    height: 50px;
   }
 }
 
