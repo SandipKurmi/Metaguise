@@ -22,11 +22,9 @@
   z-index: 1000;
 }
 
-
 .main-container {
   margin-top: 100px;
   width: 100%; /* Ensure full width */
-  
 }
 
 .image-grid {
@@ -52,9 +50,8 @@
   height: 100%;
   object-fit: cover;
   transform: scale(1); /* Ensure reset */
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-              box-shadow 0.3s ease-out, 
-              filter 0.3s ease-out;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s ease-out, filter 0.3s ease-out;
   box-shadow: none; /* Reset box-shadow */
 }
 
@@ -66,7 +63,7 @@
 
 /* Active State */
 .grid-item.active .grid-image {
-  transform: scale(2); 
+  transform: scale(2);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Add shadow */
   z-index: 10; /* Bring to front */
 }
@@ -104,7 +101,6 @@
   right: 0;
   transform-origin: right center;
 }
-
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
@@ -144,8 +140,8 @@
   color: #fff;
   background-color: #343434;
   overflow: hidden;
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;;
-  font-family: 'Degular Display', sans-serif;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  font-family: "Degular Display", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
   border: none;
@@ -154,7 +150,7 @@
   margin-bottom: 10px;
 }
 .back-button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -174,7 +170,7 @@
   color: #0e0d0d;
   background-color: #fff;
   border: none;
-} 
+}
 
 .back-button span {
   position: relative;
@@ -186,6 +182,4 @@
   font-size: 20px;
   position: relative;
   z-index: 1;
-  
 }
-

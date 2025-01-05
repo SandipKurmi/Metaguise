@@ -1,12 +1,16 @@
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-height: calc(25vh - 30px); /* Reduced height to show 1-2 rows */
-  gap: 15px; /* Increased gap between items */
+  max-height: calc(
+    65vh - 30px
+  ); /* Significantly increased height for desktop */
+  gap: 15px;
   overflow-y: scroll;
   overflow-x: hidden;
   padding-bottom: 0;
-  margin-bottom: 15px; /* Added margin to create space for footer */
+  margin-bottom: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
 }
 
 .grid-item {
@@ -469,7 +473,8 @@
 @media screen and (max-width: 768px) {
   .image-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile */
-    gap: 10px;
+    max-height: calc(70vh - 30px); /* Increased height for tablet */
+    gap: 12px;
     padding-right: 10px; /* Add some spacing from the sidebar */
   }
 
@@ -529,8 +534,9 @@
 
 @media screen and (max-width: 480px) {
   .image-grid {
-    gap: 8px;
-    padding-right: 8px;
+    max-height: calc(65vh - 30px); /* Increased height for mobile */
+    gap: 10px;
+    margin-bottom: 10px;
   }
 
   .grid-item.active:not(.last-row) .grid-image,
@@ -556,9 +562,7 @@
 @media screen and (max-width: 768px) {
   .image-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
-    max-height: calc(
-      30vh - 30px
-    ); /* Slightly taller on mobile to accommodate 2 columns */
+    max-height: calc(70vh - 30px); /* Taller on tablet for better visibility */
     gap: 12px;
     margin-bottom: 12px;
   }
@@ -570,7 +574,7 @@
 
 @media screen and (max-width: 480px) {
   .image-grid {
-    max-height: calc(28vh - 30px);
+    max-height: calc(65vh - 30px); /* Adjusted for mobile */
     gap: 10px;
     margin-bottom: 10px;
   }
@@ -578,7 +582,7 @@
 
 /* Ensure the main container takes up the full height of the viewport */
 .container.main-container {
-  min-height: calc(80vh - 80px);
+  min-height: calc(95vh - 80px); /* Increased container height */
   display: flex;
   flex-direction: column;
 }
