@@ -83,20 +83,17 @@ const SingleProject = () => {
     ? contentToRender.filter((img) => img.includes(selectedCategory))
     : contentToRender;
 
-  useEffect(() => {
-    if (location.pathname === "/single-project") {
-      // Hide vertical scroll for the gallery page
-      document.body.style.overflowY = "hidden";
-    } else {
-      // Restore default overflow for other pages
-      document.body.style.overflowY = "auto";
-    }
+  // useEffect(() => {
+  //   if (location.pathname === "/single-project") {
+  //     document.body.style.overflowY = "hidden";
+  //   } else {
+  //     document.body.style.overflowY = "auto";
+  //   }
 
-    // Cleanup to ensure no lingering styles
-    return () => {
-      document.body.style.overflowY = "auto";
-    };
-  }, [location]);
+  //   return () => {
+  //     document.body.style.overflowY = "auto";
+  //   };
+  // }, [location]);
   return (
     <div className="container main-container">
       <div className="row">
@@ -177,7 +174,7 @@ const SingleProject = () => {
               </div>
             </div>
           </div>
-          <div className="button-row " style={{ padding: "5px" }}>
+          <div className="button-row" style={{ padding: "5px" }}>
             <div className="col-md-4">
               <button
                 className={`transition-button ${
@@ -238,7 +235,7 @@ const SingleProject = () => {
           </button>{" "}
         </div>
       </div>
-      <Footer className="single-project-footer" />
+      <Footer />
     </div>
   );
 };

@@ -1,13 +1,18 @@
+.main-container {
+  margin-top: 100px;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-height: calc(
-    65vh - 30px
-  ); /* Significantly increased height for desktop */
+  max-height: calc(75vh);
   gap: 15px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
-  padding-bottom: 0;
+  padding: 15px;
   margin-bottom: 15px;
   scrollbar-width: thin;
   scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
@@ -15,7 +20,7 @@
 
 .grid-item {
   position: relative;
-  aspect-ratio: 1 / 0.6; /* Slightly adjusted aspect ratio */
+  aspect-ratio: 1 / 0.6;
   overflow: visible;
   transition: z-index 0.3s ease-out;
   max-height: 100vh;
@@ -39,7 +44,7 @@
   position: absolute;
   width: 200%;
   height: 205%;
-  top: 0; /* Scale from top */
+  top: 0;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -66,9 +71,9 @@
   position: absolute;
   width: 200%;
   height: 205%;
-  bottom: 0; /* Scale from bottom */
+  bottom: 0;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  transform-origin: center bottom; /* Scale upwards */
+  transform-origin: center bottom;
 }
 
 .transition-button {
@@ -591,17 +596,4 @@
 .container.main-container .row {
   flex: 1;
   margin-bottom: 0;
-}
-
-/* Fix the footer at the bottom */
-.single-project-footer {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #171515; /* Adjust as needed */
-  color: #ffffff; /* Adjust as needed */
-  padding: 10px 0; /* Adjust as needed */
-  text-align: center; /* Adjust as needed */
-  z-index: 1000; /* Ensure it's above other content */
 }
