@@ -1,17 +1,17 @@
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-height: calc(60vh - 60px); /* Adjust height to account for footer */
-  /* Limit height to make scrolling visible */
-  overflow-y: scroll; /* Enable vertical scrolling */
+  max-height: calc(25vh - 30px); /* Reduced height to show 1-2 rows */
+  gap: 15px; /* Increased gap between items */
+  overflow-y: scroll;
   overflow-x: hidden;
   padding-bottom: 0;
-  margin-bottom: 0;
+  margin-bottom: 15px; /* Added margin to create space for footer */
 }
 
 .grid-item {
   position: relative;
-  aspect-ratio: 1 / 0.7;
+  aspect-ratio: 1 / 0.6; /* Slightly adjusted aspect ratio */
   overflow: visible;
   transition: z-index 0.3s ease-out;
   max-height: 100vh;
@@ -553,11 +553,34 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    max-height: calc(
+      30vh - 30px
+    ); /* Slightly taller on mobile to accommodate 2 columns */
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .grid-item {
+    aspect-ratio: 1 / 0.7; /* Slightly taller items on mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-grid {
+    max-height: calc(28vh - 30px);
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 /* Ensure the main container takes up the full height of the viewport */
 .container.main-container {
+  min-height: calc(80vh - 80px);
   display: flex;
   flex-direction: column;
-  min-height: 20vh;
 }
 
 /* Ensure the content takes up all available space */
