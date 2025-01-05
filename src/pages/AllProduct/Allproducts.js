@@ -466,17 +466,27 @@ const Allproducts = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === "/all-products") {
-      // Hide vertical scroll for the gallery page
-      document.body.style.overflowY = "hidden";
-    } else {
-      // Restore default overflow for other pages
-      document.body.style.overflowY = "auto";
-    }
+    const handleScrollBehavior = () => {
+      const isMobile = window.innerWidth <= 768;
+      if (location.pathname === "/all-products" && !isMobile) {
+        // Only prevent scrolling on desktop
+        document.body.style.overflowY = "hidden";
+      } else {
+        // Allow scrolling on mobile or other pages
+        document.body.style.overflowY = "auto";
+      }
+    };
 
-    // Cleanup to ensure no lingering styles
+    // Initial check
+    handleScrollBehavior();
+
+    // Add resize listener to update scroll behavior when screen size changes
+    window.addEventListener("resize", handleScrollBehavior);
+
+    // Cleanup
     return () => {
       document.body.style.overflowY = "auto";
+      window.removeEventListener("resize", handleScrollBehavior);
     };
   }, [location]);
 
