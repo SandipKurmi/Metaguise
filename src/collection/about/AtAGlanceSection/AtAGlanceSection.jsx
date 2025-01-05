@@ -118,7 +118,9 @@ export const AtAGlanceSection = () => {
             <button
               key={index}
               className={`tw-w-2 tw-h-2 tw-rounded-full ${
-                activeSlide === index ? "tw-bg-primary" : "tw-bg-gray-300"
+                activeSlide === index
+                  ? "tw-bg-white"
+                  : "tw-bg-[rgba(255,255,255,0.3)]"
               }`}
               onClick={() => scrollToSlide(index)}
               aria-label={`Go to slide ${index + 1}`}
