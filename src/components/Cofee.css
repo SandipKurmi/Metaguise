@@ -1,95 +1,122 @@
+.cofee-container {
+  width: 100%;
+  background-color: #000;
+  overflow: hidden;
+}
+
 .cofee-content {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 100px;
-  height: 70vh; /* Full viewport height */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #222222 100%);
-  padding: 20px; /* Add some padding */
-  box-sizing: border-box; /* Include padding in the element's total width and height */
+  height: 100vh;
+  padding: 0 8%;
+  box-sizing: border-box;
+  gap: 4%;
 }
 
 .cofee-section {
-  text-align: left; /* Center align text */
-  flex: 1; /* Take up equal space */
-  max-width: 50%; /* Limit width to 50% */
-  margin-left: 60px;
+  flex: 1;
+  max-width: 45%;
 }
 
 .cofee-section h1 {
   font-family: "Degular Display", sans-serif;
-  font-size: 96px; /* Fixed font size */
+  font-size: clamp(42px, 5vw, 82px);
   font-weight: 500;
-  line-height: 1.2; /* Adjust line height */
-  margin: 0; /* Remove default margin */
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  margin-left: 10px;
-  margin-right: 5px;
-  color: #fff; /* Ensure text color is visible */
+  line-height: 1.1;
+  color: #fff;
+  margin: 0 0 40px 0;
+  text-align: left;
 }
 
 .hover-button {
-  margin-top: 20px; /* Add some space above the button */
-  padding: 10px 20px; /* Add padding to the button */
-  font-size: 16px; /* Set font size */
-  background-color: #333; /* Button background color */
-  color: #fff; /* Button text color */
-  border: none; /* Remove border */
-  margin-left: 5%;
-  border-radius: 5px; /* Add border radius */
-  cursor: pointer; /* Change cursor on hover */
+  background-color: #fff;
+  border: none;
+  padding: 16px 48px;
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.hover-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
 }
 
 .image-section {
-  flex: 1; /* Take up equal space */
-  max-width: 50%;
-  margin-right: 0%;
-  text-align: right; /* Right align image */
-}
-.image-section img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0; /* Center the image and add margin */
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-/* Media Queries for smaller screens */
-@media (max-width: 768px) {
+.image-section img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1024px) {
+  .cofee-section h1 {
+    font-size: clamp(38px, 4.5vw, 72px);
+  }
+}
+
+@media screen and (max-width: 768px) {
   .cofee-content {
-    flex-direction: unset; /* Stack items vertically */
-    text-align: center; /* Center align text */
+    flex-direction: column;
+    height: auto;
+    padding: 10% 5%;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .cofee-section,
+  .image-section {
+    max-width: 100%;
   }
 
   .cofee-section {
-    text-align: center; /* Center align text */
-    max-width: 100%; /* Full width */
+    order: 1;
+  }
+
+  .cofee-section h1 {
+    font-size: clamp(32px, 7vw, 56px);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .hover-button {
+    padding: 14px 40px;
+    font-size: 16px;
   }
 
   .image-section {
-    text-align: center; /* Center align image */
-    max-width: 100%; /* Full width */
+    order: 2;
+    justify-content: center;
   }
 
-  .cofee-section h1 {
-    font-size: 72px; /* Adjust font size for smaller screens */
-  }
-
-  .hover-button {
-    font-size: 14px; /* Adjust font size for smaller screens */
-    padding: 8px 16px; /* Adjust padding for smaller screens */
+  .image-section img {
+    max-width: 85%;
   }
 }
 
-@media (max-width: 576px) {
+@media screen and (max-width: 480px) {
+  .cofee-content {
+    padding: 15% 5%;
+  }
+
   .cofee-section h1 {
-    font-size: 48px; /* Adjust font size for smaller screens */
+    font-size: clamp(28px, 6vw, 42px);
+    margin-bottom: 25px;
   }
 
   .hover-button {
-    font-size: 12px; /* Adjust font size for smaller screens */
-    padding: 6px 12px; /* Adjust padding for smaller screens */
+    padding: 12px 36px;
+    font-size: 15px;
   }
 }

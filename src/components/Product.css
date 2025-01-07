@@ -5,6 +5,10 @@
   color: #fff;
 }
 
+.hover-button {
+  margin-top: 20px;
+}
+
 /* Section Title Styling */
 .products-title {
   font-family: Degular Display;
@@ -135,6 +139,10 @@
   .arrow-icon {
     width: 12px;
     height: 12px;
+  }
+
+  .hover-button {
+    margin-top: 20px;
   }
 }
 
