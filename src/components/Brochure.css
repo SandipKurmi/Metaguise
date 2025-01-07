@@ -1,4 +1,4 @@
-.grid-item {
+.brochure-grid-item {
   transition: all 0.3s ease; /* Updated to 0.3s */
   padding: 15px;
   display: table-cell;
@@ -70,7 +70,7 @@
     margin-bottom: 20px;
   }
 
-  .grid-item {
+  .brochure-grid-item {
     width: 50% !important;
     padding: 10px;
     display: inline-block;

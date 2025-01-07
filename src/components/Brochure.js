@@ -26,7 +26,7 @@ const Brochure = () => {
           {gallery.map((item, index) => (
             <div
               key={index}
-              className={`grid-item ${
+              className={`brochure-grid-item ${
                 hoveredIndex === index ? "col-md-6" : "col-md-2"
               } `}
               onMouseEnter={() => setHoveredIndex(index)}
