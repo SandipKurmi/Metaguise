@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import "./Features.css";
 import Featured1 from "../assets/Featured/f1.png";
 import Featured2 from "../assets/Featured/f2.png";

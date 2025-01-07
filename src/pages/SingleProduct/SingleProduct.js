@@ -130,7 +130,7 @@ const SingleProduct = () => {
               </button>
             </div>
           </div>
-          <button className="dream-button">
+          <button className="hover-button">
             <span>Build Your Dream</span>
           </button>{" "}
         </div>
