@@ -1,7 +1,7 @@
 // src/components/Gallery.js
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col, ListGroup } from "react-bootstrap";
+import { Container, Row, Col, ListGroup, Dropdown } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import Footer from "../../components/Footer";
 import "./Allproducts.css";
@@ -9,6 +9,8 @@ import "./Allproducts.css";
 const Allproducts = () => {
   const navigate = useNavigate(); // Initialize navigate function
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [showDropdown, setShowDropdown] = useState(false);
   const singleProductDetail = [
     {
       name: "MetaCoin",
@@ -490,12 +492,68 @@ const Allproducts = () => {
     };
   }, [location]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="gallery-container">
       <div className="gallery-content">
         <Container fluid>
           <Row>
             <Col md={9}>
+              {isMobile && (
+                <div className="mobile-filter">
+                  <Dropdown
+                    show={showDropdown}
+                    onToggle={(isOpen) => setShowDropdown(isOpen)}
+                  >
+                    <Dropdown.Toggle variant="dark" id="type-dropdown">
+                      Type
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item
+                        onClick={() => filterImagesByCategory("")}
+                        active={selectedCategory === ""}
+                      >
+                        All
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() => filterImagesByCategory("MetaParametric")}
+                        active={selectedCategory === "MetaParametric"}
+                      >
+                        MetaParametric
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() => filterImagesByCategory("MetaForm")}
+                        active={selectedCategory === "MetaForm"}
+                      >
+                        MetaForm
+                      </Dropdown.Item>
+
+                      <Dropdown.Item
+                        onClick={() => filterImagesByCategory("MetaFunction")}
+                        active={selectedCategory === "MetaFunction"}
+                      >
+                        MetaFunction
+                      </Dropdown.Item>
+
+                      <Dropdown.Item
+                        onClick={() => filterImagesByCategory("MetaSurface")}
+                        active={selectedCategory === "MetaSurface"}
+                      >
+                        MetaSurfaces
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+              )}
+
               <div className="gallery">
                 {filteredImages.map((img, index) => (
                   <div

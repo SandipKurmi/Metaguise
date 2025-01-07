@@ -1,12 +1,15 @@
 // src/components/Gallery.js
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col, ListGroup } from "react-bootstrap";
+import { Container, Row, Col, ListGroup, Dropdown } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import Footer from "../../components/Footer";
 import "./Allprojects.css";
 
 const Allprojects = () => {
+  const navigate = useNavigate(); // Initialize navigate function
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [showDropdown, setShowDropdown] = useState(false);
   const images = [
     { imgPath: "assets/Allprojects/commercial/Ardete/cover/ardete5.jpg" },
     { imgPath: "assets/Allprojects/commercial/Tanishq/cover/tanishq11.jpg" },
@@ -34,7 +37,6 @@ const Allprojects = () => {
     { imgPath: "assets/Allprojects/commercial/E10/cover/e105.jpg" },
   ];
 
-  const navigate = useNavigate(); // Initialize navigate function
   const [selectedCategory, setSelectedCategory] = useState("");
   const singleprojectDetail = [
     {
@@ -498,7 +500,9 @@ const Allprojects = () => {
 
   // Filter images based on selected category
   const filteredImages = selectedCategory
-    ? images.filter((img) => img.imgPath.includes(selectedCategory))
+    ? images.filter((img) =>
+        img.imgPath.toLowerCase().includes(selectedCategory.toLowerCase())
+      )
     : images;
 
   const location = useLocation();
@@ -528,12 +532,54 @@ const Allprojects = () => {
     };
   }, [location]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="gallery-container">
       <div className="gallery-content">
         <Container>
           <Row>
             <Col lg={9} md={8}>
+              {isMobile && (
+                <div className="mobile-filter">
+                  <Dropdown
+                    show={showDropdown}
+                    onToggle={(isOpen) => setShowDropdown(isOpen)}
+                  >
+                    <Dropdown.Toggle variant="dark" id="type-dropdown">
+                      Type
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item
+                        onClick={() => filterImagesByCategory("")}
+                        active={selectedCategory === ""}
+                      >
+                        All
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() => filterImagesByCategory("residential")}
+                        active={selectedCategory === "residential"}
+                      >
+                        Residential
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        onClick={() => filterImagesByCategory("commercial")}
+                        active={selectedCategory === "commercial"}
+                      >
+                        Commercial
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+              )}
+
               <div className="gallery">
                 {filteredImages.map((img, index) => (
                   <div
