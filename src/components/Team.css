@@ -27,6 +27,62 @@
   display: flex;
   gap: 20px;
 }
+
+.team-section {
+  width: 100%;
+  background: linear-gradient(180deg, #252525 0%, #000000 100%);
+  color: white;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.team-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.team-image-container {
+  flex: 1;
+  max-width: 50%;
+}
+
+.team-image {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.team-image.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-content {
+  flex: 1;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.team-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-title {
+  font-family: "Degular Display", sans-serif;
+  font-size: 128px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
 .team-text{
 font-family: Degular Display;
 font-size: 128px;
@@ -35,6 +91,7 @@ line-height: 100px;
 text-align: center;
 margin-top: 20px;
 }
+
 /* Media Queries for Responsive Adjustments */
 
 /* Extra Large Screens (1200px and above) */
@@ -116,11 +173,70 @@ margin-top: 20px;
   }
 }
 
+/* Media Queries */
+@media (max-width: 1400px) {
+  .team-title {
+    font-size: 100px;
+  }
+}
 
+@media (max-width: 1200px) {
+  .team-title {
+    font-size: 80px;
+  }
+  
+  .team-wrapper {
+    gap: 30px;
+  }
+}
 
+@media (max-width: 991px) {
+  .team-title {
+    font-size: 64px;
+  }
+  
+  .team-wrapper {
+    gap: 20px;
+  }
+}
 
+@media (max-width: 768px) {
+  .team-section {
+    padding: 40px 0;
+  }
 
+  .team-wrapper {
+    flex-direction: row;
+    gap: 20px;
+    padding: 0 15px;
+  }
 
+  .team-image-container {
+    max-width: 45%;
+  }
 
+  .team-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+}
 
+@media (max-width: 576px) {
+  .team-section {
+    padding: 30px 0;
+  }
 
+  .team-wrapper {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .team-image-container {
+    max-width: 45%;
+  }
+
+  .team-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+}

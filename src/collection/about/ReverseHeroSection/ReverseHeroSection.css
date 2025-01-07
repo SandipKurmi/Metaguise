@@ -10,7 +10,7 @@
   background: #333;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .hover-button {
     width: 100%;
     max-width: 300px;
@@ -21,4 +21,4 @@
   .hover-button {
     width: auto;
   }
-}
+} */
