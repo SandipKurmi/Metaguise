@@ -510,7 +510,7 @@ const Allproducts = () => {
               {isMobile && (
                 <div className="mobile-filter">
                   <div className="mobile-title">
-                    <h1>Our Projects</h1>
+                    <h1>Our Products</h1>
                   </div>
 
                   <Dropdown
