@@ -13,7 +13,7 @@ export const AboutHeroSection = () => {
   return (
     <section className={styles.aboutHeroContainer}>
       <div className={styles.contentSection}>
-        <h1 className={styles.title}>About Us</h1>
+        <h1>About Us</h1>
         {paragraphs.map((text, index) => (
           <p key={index} className={styles.paragraph}>
             {text}

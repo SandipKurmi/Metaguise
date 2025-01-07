@@ -13,11 +13,15 @@ export const About = () => {
   return (
     <>
       <div>
-        <AboutHeroSection />
+        <div className="tw-py-5  tw-mt-20">
+          <AboutHeroSection />
+        </div>
 
-        <VisionAndMission />
+        <div className="tw-py-5">
+          <VisionAndMission />
+        </div>
 
-        <div className="tw-container tw-mx-auto tw-px-4 tw-my-15 md:tw-my-10">
+        <div className="tw-container tw-mx-auto tw-px-4 tw-py-5">
           <div
             className="tw-relative tw-w-full tw-overflow-hidden"
             style={{
@@ -34,11 +38,11 @@ export const About = () => {
           </div>
         </div>
 
-        <div>
+        <div className="tw-py-5">
           <AtAGlanceSection />
         </div>
 
-        <div>
+        <div className="tw-py-5">
           <ReverseHeroSection />
         </div>
 

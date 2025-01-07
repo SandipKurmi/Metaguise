@@ -160,10 +160,12 @@
 
   .vision-mission-card .card-icon {
     right: 1.5rem;
+    width: 40%;
   }
 
   .vision-mission-card .title {
     font-size: 2rem;
+    text-transform: uppercase;
   }
 
   .vision-mission-card .description p {
