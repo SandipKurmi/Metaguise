@@ -1,16 +1,26 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "./Metavision.css";
 import Coinback from "../assets/coinback.png";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Metavision1 = () => {
   const containerRef = useRef();
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
 
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(useGSAP);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useGSAP(() => {
     gsap.to(".paragraph p", {
@@ -26,16 +36,18 @@ const Metavision1 = () => {
       },
     });
 
-    gsap.from("#coin", {
-      x: 2000,
-      y: -3000,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".metavision-section",
-        scroller: "body",
-      },
-    });
-  });
+    if (isDesktop) {
+      gsap.from("#coin", {
+        x: 2000,
+        y: -3000,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".metavision-section",
+          scroller: "body",
+        },
+      });
+    }
+  }, [isDesktop]);
 
   return (
     <Container
