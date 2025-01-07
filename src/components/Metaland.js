@@ -3,7 +3,7 @@ import "./Metaland.css";
 
 const Metaland = () => {
   const [scale, setScale] = useState(1);
-  const [iframeScale, setIframeScale] = useState(0.8); // Start smaller for iframe to come in on scroll down
+  const [iframeScale, setIframeScale] = useState(1); // Start smaller for iframe to come in on scroll down
   const [isMouseOver, setIsMouseOver] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const scaleFactor = 0.005; // Faster scaling factor for main container
@@ -26,10 +26,16 @@ const Metaland = () => {
 
       if (scrollDiff > 0) {
         newScale = Math.min(maxScale, scale + scaleFactor);
-        newIframeScale = Math.min(maxIframeScale, iframeScale + iframeScaleFactor);
+        newIframeScale = Math.min(
+          maxIframeScale,
+          iframeScale + iframeScaleFactor
+        );
       } else if (scrollDiff < 0) {
         newScale = Math.max(minScale, scale - scaleFactor);
-        newIframeScale = Math.max(minIframeScale, iframeScale - iframeScaleFactor);
+        newIframeScale = Math.max(
+          minIframeScale,
+          iframeScale - iframeScaleFactor
+        );
       }
 
       setScale(newScale);
@@ -70,7 +76,12 @@ const Metaland = () => {
             transition: `transform ${transitionDuration} ease`,
           }}
         ></iframe>
-         <button className="hover-button" style={{ position: 'absolute', top: '350px', right: '350px' }}><span>Visit Now</span></button>
+        <button
+          className="hover-button"
+          style={{ position: "absolute", top: "350px", right: "350px" }}
+        >
+          <span>Visit Now</span>
+        </button>
       </div>
     </div>
   );

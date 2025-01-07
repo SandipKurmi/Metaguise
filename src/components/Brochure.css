@@ -62,3 +62,21 @@
   line-height: 100px;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  .brochure-title {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .grid-item {
+    padding: 10px;
+    display: inline;
+  }
+
+  .brochure-overlay {
+    top: 80%;
+    left: 50%;
+    font-size: 30px;
+  }
+}

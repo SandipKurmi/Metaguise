@@ -13,7 +13,6 @@
   align-items: center;
 }
 
-
 .slide {
   background-size: cover; /* Cover entire slide */
   background-position: center;
@@ -28,7 +27,7 @@
 .slide-content {
   padding: 80px;
   padding-bottom: 100px;
-  color: white; 
+  color: white;
   text-align: right !important;
 }
 
@@ -62,7 +61,7 @@
 
 .swiper-pagination {
   position: absolute; /* Required for custom placement */
-  bottom: 60px !important;  /* Adjust position */
+  bottom: 60px !important; /* Adjust position */
   left: -60px !important; /* Align bottom-right */
   text-align: right;
 }
@@ -71,3 +70,19 @@
   position: relative; /* Ensure the parent is positioned */
 }
 
+@media screen and (max-width: 992px) {
+  .slide-content {
+    padding: 40px;
+    padding-bottom: 60px;
+  }
+
+  .slide-content h1 {
+    font-size: 48px;
+    line-height: 60px;
+  }
+
+  .slide-content p {
+    text-align: right !important;
+    letter-spacing: 2px;
+  }
+}

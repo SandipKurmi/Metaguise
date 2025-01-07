@@ -7,7 +7,7 @@
 
 /* Featured Text Styling */
 .featured-text {
-  font-family: 'Degular Display', sans-serif;
+  font-family: "Degular Display", sans-serif;
   font-size: 100px;
   font-weight: 900;
   line-height: 100px;
@@ -30,7 +30,6 @@
   width: max-content; /* Only takes as much width as needed */
   padding-right: 0px; /* Adjust to ensure extra space at the end */
 }
-
 
 .featured-image img {
   width: 220px; /* Adjust based on actual image width */
@@ -69,12 +68,10 @@
 
 /* --------------------------------------------------------------------------------- */
 
-
 /* Featured Image Hover Effects */
 .featured-image {
   flex: 0 0 auto;
   transition: transform 0.3s ease, filter 0.3s;
-  
 }
 
 .featured-image img {
@@ -109,7 +106,7 @@
   background-color: #343434;
   overflow: hidden;
   transition: color 0.4s ease-in-out;
-  font-family: 'Degular Display', sans-serif;
+  font-family: "Degular Display", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
   border: none;
@@ -118,7 +115,7 @@
 
 /* Button Hover Effect */
 .hover-button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -145,10 +142,16 @@
   z-index: 1;
 }
 
+@media screen and (max-width: 992px) {
+  .featured-section {
+    padding: 20px !important;
+  }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .featured-text {
-    font-size: 60px;
+    font-size: 40px;
     line-height: 1.2;
   }
   .hover-button {
@@ -156,6 +159,6 @@
     padding: 8px 20px;
   }
   .featured-image {
-    flex: 0 0 50%; /* Show fewer images on smaller screens */
+    flex: auto; /* Show fewer images on smaller screens */
   }
 }

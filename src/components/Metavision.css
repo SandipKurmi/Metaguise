@@ -1,4 +1,4 @@
-.metavision-section{
+.metavision-section {
   margin-top: 50px;
   margin-bottom: 50px;
 }
@@ -11,7 +11,6 @@
   font-weight: 900;
   line-height: 100px;
   text-align: center;
-
 }
 
 /* Metavision Text Styling */
@@ -22,10 +21,9 @@
   line-height: 55px;
   letter-spacing: 0.01em;
   text-align: center;
-
 }
 
-.font{
+.font {
   font-family: Degular Display;
   font-weight: 900;
 }
@@ -139,6 +137,14 @@ p {
     font-size: 14px;
     padding: 6px 12px;
   }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
 }
 
 /* Extra Small Devices (Below 576px) */
@@ -158,4 +164,12 @@ p {
   .content {
     margin: 20px;
   }
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
 }

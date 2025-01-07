@@ -19,7 +19,7 @@
 }
 
 .cofee-section h1 {
-  font-family: 'Degular Display', sans-serif;
+  font-family: "Degular Display", sans-serif;
   font-size: 96px; /* Fixed font size */
   font-weight: 500;
   line-height: 1.2; /* Adjust line height */
@@ -41,10 +41,7 @@
   margin-left: 5%;
   border-radius: 5px; /* Add border radius */
   cursor: pointer; /* Change cursor on hover */
-
-
 }
-
 
 .image-section {
   flex: 1; /* Take up equal space */
@@ -59,11 +56,10 @@
   margin: 0; /* Center the image and add margin */
 }
 
-
 /* Media Queries for smaller screens */
 @media (max-width: 768px) {
   .cofee-content {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: unset; /* Stack items vertically */
     text-align: center; /* Center align text */
   }
 
