@@ -178,12 +178,24 @@
   width: 50%;
 }
 
+.mobile-title {
+  margin: 1rem 0;
+}
+
 .mobile-filter .dropdown-toggle {
   width: 100%;
   background-color: #171515;
   border: none;
   padding: 10px 15px;
   border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.mobile-filter .dropdown-toggle::after {
+  margin-left: auto;
 }
 
 .mobile-filter .dropdown-menu {
@@ -212,6 +224,10 @@
     padding: 15px;
     max-height: calc(100vh - 180px);
   } */
+
+  .desktop-title {
+    display: none;
+  }
 
   .sidebar {
     display: none;

@@ -509,6 +509,10 @@ const Allproducts = () => {
             <Col md={9}>
               {isMobile && (
                 <div className="mobile-filter">
+                  <div className="mobile-title">
+                    <h1>Our Projects</h1>
+                  </div>
+
                   <Dropdown
                     show={showDropdown}
                     onToggle={(isOpen) => setShowDropdown(isOpen)}
@@ -574,6 +578,8 @@ const Allproducts = () => {
               </div>
             </Col>
             <Col md={3} className="mb-3">
+              <h1 className="desktop-title mb-3">Our Products</h1>
+
               <div className="sidebar">
                 <h4 className="mb-3">Sections</h4>
                 <ListGroup>

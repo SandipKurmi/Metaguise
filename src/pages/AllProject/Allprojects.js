@@ -549,6 +549,10 @@ const Allprojects = () => {
             <Col lg={9} md={8}>
               {isMobile && (
                 <div className="mobile-filter">
+                  <div className="mobile-title">
+                    <h1>Our Projects</h1>
+                  </div>
+
                   <Dropdown
                     show={showDropdown}
                     onToggle={(isOpen) => setShowDropdown(isOpen)}
@@ -598,8 +602,11 @@ const Allprojects = () => {
               </div>
             </Col>
             <Col lg={3} md={4} className="mb-4">
+              <h1 className="desktop-title mb-3">Our Projects</h1>
+
               <div className="sidebar">
-                <h2>Our Projects</h2>
+                <h4 className="mb-3">Type</h4>
+
                 <ListGroup variant="flush">
                   <ListGroup.Item
                     action
