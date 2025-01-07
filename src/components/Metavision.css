@@ -81,7 +81,19 @@ p {
   /* `forwards` keeps the final state */
 }
 
+/* Coin styling */
+#coin {
+  width: auto;
+}
+
 /* Media Queries */
+
+/* Mobile Devices (Below 768px) */
+@media (max-width: 768px) {
+  #coin {
+    height: 40px;
+  }
+}
 
 /* Extra Large Devices (1200px and above) */
 @media (min-width: 1200px) {
