@@ -1,5 +1,5 @@
 .grid-item {
-  transition: all 1s ease; /* Increased to 1s */
+  transition: all 0.3s ease; /* Updated to 0.3s */
   padding: 15px;
   display: table-cell;
   position: relative; /* Needed for text overlay positioning */
@@ -10,27 +10,27 @@
   position: relative;
   width: 100%;
   height: 330px;
-  transition: transform 1s ease; /* Increased to 1s */
+  transition: transform 0.3s ease; /* Updated to 0.3s */
   border-radius: 20px;
 }
 
 /* Add a zoom-out and size increase effect */
 .image-brochure-container:hover {
-  transform: scale(1.2); /* Increases the overall size of the container */
+  transform: scale(1.1); /* Updated to 1.1 */
 }
 
 .image-brochure-container img {
-  transition: transform 1s ease; /* Increased to 1s */
+  transition: transform 0.3s ease; /* Updated to 0.3s */
   transform-origin: center;
   width: 100%;
-  height: 330px;
+  height: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
 
 /* Zoom-out effect on hover (scale down the image slightly) */
 .image-brochure-container:hover img {
-  transform: scale(0.8); /* Shrinks the image on hover */
+  transform: scale(0.8); /* No change */
   border-radius: 20px;
 }
 
@@ -44,7 +44,7 @@
   font-size: 30px;
   font-weight: 900;
   opacity: 0; /* Hidden by default */
-  transition: opacity 1s ease; /* Increased to 1s */
+  transition: opacity 0.3s ease; /* Updated to 0.3s */
   font-family: "Degular Display";
   display: flex;
   align-items: center;
@@ -67,16 +67,42 @@
   .brochure-title {
     font-size: 50px;
     line-height: 50px;
+    margin-bottom: 20px;
   }
 
   .grid-item {
+    width: 50% !important;
     padding: 10px;
-    display: inline;
+    display: inline-block;
+  }
+
+  .image-brochure-container {
+    height: 140px;
+    width: 100%;
+  }
+
+  .image-brochure-container img {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
   }
 
   .brochure-overlay {
-    top: 80%;
+    top: 50%;
     left: 50%;
-    font-size: 30px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Disable hover effects on mobile */
+  .image-brochure-container:hover {
+    transform: none;
+  }
+
+  .image-brochure-container:hover img {
+    transform: none;
   }
 }
