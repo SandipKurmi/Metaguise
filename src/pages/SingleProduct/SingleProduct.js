@@ -180,6 +180,9 @@ const SingleProduct = () => {
             <span>Build Your Dream</span>
           </button>
         </div>
+        <button className="mobile-controls hover-button">
+          <span>Build Your Dream</span>
+        </button>
       </div>
       <Footer />
     </div>
