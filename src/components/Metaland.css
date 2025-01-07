@@ -9,34 +9,49 @@
   margin-top: 50px;
   margin-bottom: 50px;
   transition: transform 1.2s ease-in-out; /* Smooth zoom transition */
+  overflow-x: hidden;
 }
 
 .content {
   max-width: 80%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.button-container {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.hover-button {
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .metaland-text {
-  font-family: 'Degular Display', sans-serif;
+  font-family: "Degular Display", sans-serif;
   font-size: 100px;
   font-weight: 900;
   line-height: 100px;
   text-align: center;
 }
-.hover-button {
-  border: none; /* Remove border */
-  text-decoration: none; /* Remove underline */
-  /* Add any other styles you need for the button */
-}
-
-.hover-button:hover {
-  border: none; /* Ensure border is removed on hover */
-  text-decoration: none; /* Ensure underline is removed on hover */
-  /* Add any other hover styles you need */
-}
 
 iframe {
   transition: transform 1.2s ease-in-out;
+  border-radius: 8px;
+  max-width: 100%;
+  width: 100%;
 }
+
 /* Media Queries */
 
 /* Extra Large Screens (1200px and above) */
@@ -70,6 +85,10 @@ iframe {
   iframe {
     height: 400px; /* Reduced iframe height */
   }
+
+  .button-container {
+    right: 1.5rem;
+  }
 }
 
 /* Small Screens (576px to 767px) */
@@ -85,23 +104,48 @@ iframe {
   iframe {
     height: 350px; /* Reduced iframe height */
   }
+
+  .button-container {
+    right: 1rem;
+  }
 }
 
 /* Extra Small Screens (Below 576px) */
 @media (max-width: 575px) {
   .metaland-container {
-    flex-direction: column; /* Stack elements vertically */
-    padding: 10px; /* Reduce padding */
-    height: 30vh;
+    flex-direction: column;
+    padding: 10px;
+    height: auto;
+    margin: 20px 0;
+    width: 100%;
+    overflow-x: hidden;
   }
 
-  .metaland-text {
-    font-size: 40px; /* Adjust font size */
-    line-height: 1.1; /* Tighten spacing */
+  .content {
+    max-width: 100%;
+    padding: 0 10px;
+    overflow-x: hidden;
+  }
+
+  .video-container {
+    width: 100%;
+    overflow: hidden;
   }
 
   iframe {
-    height: 250px; /* Smaller iframe height */
+    height: 300px;
+    width: 100%;
+  }
+
+  .button-container {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
   }
 }
 
@@ -115,9 +159,3 @@ iframe {
     height: 200px; /* Adjust iframe height for very small screens */
   }
 }
-
-
-
-
-
-

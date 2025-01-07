@@ -62,26 +62,26 @@ const Metaland = () => {
     >
       <div className="content">
         <h1 className="metaland-text">Experience Metaland</h1>
-        <iframe
-          width="100%"
-          height="500"
-          src="https://www.youtube.com/embed/HVRcBLgKIeA?si=a5Tp5rUfG1vr_Mqv"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-          style={{
-            transform: `scale(${iframeScale})`,
-            transition: `transform ${transitionDuration} ease`,
-          }}
-        ></iframe>
-        <button
-          className="hover-button"
-          style={{ position: "absolute", top: "350px", right: "350px" }}
-        >
-          <span>Visit Now</span>
-        </button>
+        <div className="video-container">
+          <iframe
+            width="100%"
+            height="500"
+            src="https://www.youtube.com/embed/HVRcBLgKIeA?si=a5Tp5rUfG1vr_Mqv"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            style={{
+              transform: `scale(${iframeScale})`,
+              transition: `transform ${transitionDuration} ease`,
+            }}
+          ></iframe>
+          <div className="button-container">
+            <button className="hover-button">
+              <span>Visit Now</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
