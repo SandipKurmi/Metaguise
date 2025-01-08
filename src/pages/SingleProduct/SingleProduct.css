@@ -32,8 +32,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 10px; /* Add some space between the grid items */
   padding: 20px; /* Add some padding around the grid */
-  height: 100vh; /* Adjust height as needed */
-  overflow-y: auto; /* Enable vertical scrolling */
+  /* height: 100vh; Adjust height as needed */
+  /* overflow-y: auto; Enable vertical scrolling */
 }
 .grid-item {
   position: relative;
