@@ -26,7 +26,7 @@ export const Swipper = () => {
         >
           <div className="slide-content">
             <h1>Experience Timeless Architecture</h1>
-            <p>that Redefine Sophistication</p>
+            <p>that Redefine </p>
           </div>
         </div>
       </SwiperSlide>
